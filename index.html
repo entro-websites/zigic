@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Žigić - Odgajivačnica labrador retrivera i pansion za pse, Jakovo</title>
+<meta name="description" content="Odgajivačnica labrador retrivera Žigić iz Jakova kod Beograda. Štenci vrhunskih engleskih krvnih linija, 15+ godina iskustva, pansion za pse.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #5bbad5;
+    --accent-dark: #3f95ad;
+    --ink: #232628;
+    --ink-soft: #5a5f62;
+    --bg: #ffffff;
+    --bg-off: #f6f8f9;
+    --line: #e2e6e8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Karla', sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  .wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @media (max-width: 768px) {
+    .wrap {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  /* ---------- NAVBAR ---------- */
+  header.site-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    z-index: 100;
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo img {
+    height: 40px;
+    width: auto;
+  }
+
+  .logo span {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--ink);
+    letter-spacing: 0.5px;
+  }
+
+  nav.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  nav.main-nav a.nav-link {
+    font-size: 0.95rem;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  nav.main-nav a.nav-link:hover {
+    color: var(--accent-dark);
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    padding: 12px 26px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .btn:hover {
+    background: var(--accent-dark);
+  }
+
+  .btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: var(--accent-dark);
+    padding: 12px 26px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: 1px solid var(--accent);
+    white-space: nowrap;
+  }
+
+  .btn-outline:hover {
+    background: var(--bg-off);
+  }
+
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--ink);
+  }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .mobile-menu.open {
+    display: flex;
+  }
+
+  .mobile-menu a.nav-link {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+    font-size: 1rem;
+  }
+
+  .mobile-menu .btn {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  @media (max-width: 991px) {
+    nav.main-nav {
+      display: none;
+    }
+    .hamburger {
+      display: flex;
+    }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    padding-top: 72px;
+    padding-bottom: 72px;
+    background: var(--bg-off);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 22px;
+  }
+
+  .hero p.lead {
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    max-width: 40ch;
+    margin-bottom: 30px;
+  }
+
+  .hero-badges {
+    display: flex;
+    gap: 28px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+
+  .hero-badge {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-badge strong {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--accent-dark);
+  }
+
+  .hero-badge span {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+
+  .hero-img {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+
+  .hero-img img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+    }
+    .hero-img img {
+      height: 280px;
+    }
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+
+  @media (max-width: 768px) {
+    section {
+      padding-top: 56px;
+      padding-bottom: 56px;
+    }
+  }
+
+  .section-head {
+    max-width: 640px;
+    margin-bottom: 48px;
+  }
+
+  .section-head .tag {
+    color: var(--accent-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .section-head h2 {
+    font-size: 2.1rem;
+    margin-bottom: 14px;
+  }
+
+  .section-head p {
+    color: var(--ink-soft);
+    max-width: 65ch;
+  }
+
+  p.body-text {
+    max-width: 65ch;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+
+  /* About */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .about-img {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+
+  .about-img img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+  }
+
+  @media (max-width: 900px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+    .about-img {
+      order: -1;
+    }
+    .about-img img {
+      height: 260px;
+    }
+  }
+
+  /* Puppies / sale */
+  .sale-section {
+    background: var(--bg-off);
+  }
+
+  .sale-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .sale-img {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+
+  .sale-img img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+  }
+
+  .info-list {
+    list-style: none;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  .info-list li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink-soft);
+  }
+
+  .info-list li svg {
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  @media (max-width: 900px) {
+    .sale-grid {
+      grid-template-columns: 1fr;
+    }
+    .sale-img {
+      order: -1;
+    }
+    .sale-img img {
+      height: 260px;
+    }
+  }
+
+  /* Parents / bloodlines */
+  .parents-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .parent-card {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--bg);
+  }
+
+  .parent-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .parent-card .parent-body {
+    padding: 24px;
+  }
+
+  .parent-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+
+  .parent-card p {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 700px) {
+    .parents-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Recognition / book */
+  .recog-section {
+    background: var(--bg-off);
+  }
+
+  .recog-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .recog-img {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: #fff;
+  }
+
+  .recog-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  @media (max-width: 900px) {
+    .recog-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Pansion */
+  .pansion-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .pansion-img {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+
+  .pansion-img img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+  }
+
+  @media (max-width: 900px) {
+    .pansion-grid {
+      grid-template-columns: 1fr;
+    }
+    .pansion-img img {
+      height: 260px;
+    }
+  }
+
+  /* Contact */
+  .contact-section {
+    background: var(--bg-off);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
+
+  .contact-card {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--bg);
+    padding: 32px;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .contact-item:last-child {
+    border-bottom: none;
+  }
+
+  .contact-item svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .contact-item strong {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+
+  .contact-item span {
+    font-size: 1rem;
+    color: var(--ink);
+  }
+
+  .map-placeholder {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #e9edee;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    min-height: 320px;
+    font-size: 0.9rem;
+    padding: 24px;
+  }
+
+  @media (max-width: 900px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Footer */
+  footer {
+    background: var(--ink);
+    color: #cfd6d8;
+    padding-top: 56px;
+    padding-bottom: 32px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .footer-logo img {
+    height: 34px;
+  }
+
+  .footer-logo span {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #fff;
+  }
+
+  footer p {
+    color: #a6adaf;
+    max-width: 40ch;
+    font-size: 0.95rem;
+  }
+
+  footer h4 {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 16px;
+    font-family: 'Karla', sans-serif;
+    font-weight: 700;
+  }
+
+  footer ul {
+    list-style: none;
+  }
+
+  footer ul li {
+    margin-bottom: 10px;
+  }
+
+  footer ul li a {
+    color: #a6adaf;
+    font-size: 0.95rem;
+  }
+
+  footer ul li a:hover {
+    color: var(--accent);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #3a3d3f;
+    padding-top: 24px;
+    font-size: 0.85rem;
+    color: #83898b;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  @media (max-width: 700px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav-inner">
+    <a href="#" class="logo" aria-label="Žigić - Odgajivačnica labrador retrivera, početna strana">
+      <img src="assets/logo.png" alt="Logo odgajivačnice Žigić - silueta labradora">
+      <span>Žigić</span>
+    </a>
+
+    <nav class="main-nav">
+      <a class="nav-link" href="#o-nama">O nama</a>
+      <a class="nav-link" href="#stenci">Štenci</a>
+      <a class="nav-link" href="#roditelji">Roditelji</a>
+      <a class="nav-link" href="#pansion">Pansion</a>
+      <a class="nav-link" href="#kontakt">Kontakt</a>
+      <a class="btn" href="#kontakt">Pozovite nas</a>
+    </nav>
+
+    <button class="hamburger" id="hamburgerBtn" aria-label="Otvori meni" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu wrap" id="mobileMenu">
+    <a class="nav-link" href="#o-nama">O nama</a>
+    <a class="nav-link" href="#stenci">Štenci</a>
+    <a class="nav-link" href="#roditelji">Roditelji</a>
+    <a class="nav-link" href="#pansion">Pansion</a>
+    <a class="nav-link" href="#kontakt">Kontakt</a>
+    <a class="btn" href="#kontakt">Pozovite nas</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Labradori iz Jakova, gajeni sa pažnjom već 15 godina</h1>
+      <p class="lead">Uzgajamo labrador retrivere engleskih krvnih linija u dvorištu u Jakovu kod Beograda. Svako štene ide kod vas sa papirima, čipom i pregledom. Za sve dok ste na putu, tu je i pansion.</p>
+      <a href="#kontakt" class="btn">Pozovite nas za štenca</a>
+      <div class="hero-badges">
+        <div class="hero-badge">
+          <strong>15+</strong>
+          <span>godina uzgoja</span>
+        </div>
+        <div class="hero-badge">
+          <strong>100%</strong>
+          <span>engleske linije</span>
+        </div>
+        <div class="hero-badge">
+          <strong>Jakovo</strong>
+          <span>Beograd</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="assets/prodaja-labradora-promo-2.jpg" alt="Šest štenaca labradora gleda kroz vrata štale">
+    </div>
+  </div>
+</section>
+
+<section id="o-nama">
+  <div class="wrap about-grid">
+    <div>
+      <span class="tag">O nama</span>
+      <h2>Ko gaji ove pse</h2>
+      <p class="body-text">Odgajivačnicom se bavim 15 godina. Sve je počelo od jednog psa i želje da radim stvar koju znam i volim, ne od plana da se to pretvori u posao.</p>
+      <p class="body-text">Danas biram roditelje po zdravlju kukova, temperamentu i poreklu, a ne po tome koliko brzo mogu da prodam štence. Svaki par koji spojim, spajam zato što mislim da će dati zdrave i uravnotežene pse.</p>
+      <p class="body-text">Radim sa engleskim krvnim linijama, provereno kroz generacije, uz dokumentaciju koju svaki vlasnik može da vidi pre nego što se odluči.</p>
+    </div>
+    <div class="about-img">
+      <img src="assets/georgeSidebar.jpg" alt="Odrastao labrador zlatne boje stoji na travi u profilu">
+    </div>
+  </div>
+</section>
+
+<section id="stenci" class="sale-section">
+  <div class="wrap sale-grid">
+    <div class="sale-img">
+      <img src="assets/prodaja-labradora-promo-2.jpg" alt="Grupa štenaca labradora u drvenom boksu">
+    </div>
+    <div>
+      <span class="tag">Štenci na prodaju</span>
+      <h2>Štenci koji su spremni za novi dom</h2>
+      <p class="body-text">Štenci ostaju sa mamom i braćom najmanje 8 nedelja. Do tada su vakcinisani, čipovani i navikli na ljude, buku i dodir.</p>
+      <ul class="info-list">
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5bbad5" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          <span>Prva vakcina, čipovanje i mikročip pasoš pri preuzimanju</span>
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5bbad5" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          <span>Rodovnik i potvrda o poreklu roditelja</span>
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5bbad5" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          <span>Savet oko ishrane i navika za prve mesece kod kuće</span>
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5bbad5" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          <span>Dostupan sam za pitanja i posle preuzimanja štenca</span>
+        </li>
+      </ul>
+      <a href="#kontakt" class="btn">Pitajte o dostupnim štencima</a>
+    </div>
+  </div>
+</section>
+
+<section id="roditelji">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">Roditelji i krvne linije</span>
+      <h2>Psi iz kojih potiču naši štenci</h2>
+      <p>Roditelje biram lično, gledam pregled kukova i laktova, temperament i to kako se ponašaju prema deci i drugim psima.</p>
+    </div>
+    <div class="parents-grid">
+      <div class="parent-card">
+        <img src="assets/blue-king-aris.jpg" alt="Mladi labrador žute boje sedi na travi u dvorištu">
+        <div class="parent-body">
+          <h3>Aris</h3>
+          <p>Iz engleske linije, miran temperament, dobri kukovi po pregledu. Otac nekoliko naših legla u poslednje dve godine.</p>
+        </div>
+      </div>
+      <div class="parent-card">
+        <img src="assets/georgeSidebar.jpg" alt="Odrastao labrador zlatne boje stoji uspravno na travi">
+        <div class="parent-body">
+          <h3>George</h3>
+          <p>Krupan, stabilan, sa izraženim karakteristikama rase po standardu. Radi kao pratilac dece u sopstvenoj porodici.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="recog-section">
+  <div class="wrap recog-grid">
+    <div class="recog-img">
+      <img src="assets/book1.png" alt="Korica knjige Everyone's Dog o labrador retriveru autorke Marion Hopkinson, sa rukom pisanom posvetom">
+    </div>
+    <div>
+      <span class="tag">Priznanje</span>
+      <h2>Poznajem ovu rasu odavno</h2>
+      <p class="body-text">Marion Hopkinson, autorka knjige "Everyone's Dog" o labrador retriveru, poslala je posvetu sa rečima podrške našem uzgoju. Za nas je to potvrda da smo na dobrom putu sa izborom pasa i pristupom uzgoju.</p>
+      <p class="body-text">Ne pravim štence na brzinu. Svako leglo planiram unapred, gledam kalendar parenja i zdravlje kuje pre nego što se odlučim za spoj.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pansion">
+  <div class="wrap pansion-grid">
+    <div>
+      <span class="tag">Pansion za pse</span>
+      <h2>Mesto za vašeg psa kad ste na putu</h2>
+      <p class="body-text">Pored uzgoja, imamo i pansion u Jakovu. Boksovi su natkriveni, sa dvorištem za kretanje i hlad za letnje dane.</p>
+      <p class="body-text">Pse hranimo po dogovoru, dva ili tri puta dnevno, i izvodimo ih na dvorište svaki dan, ne samo za nuždu.</p>
+      <p class="body-text">Javite se unapred da rezervišete mesto, posebno pred sezonu godišnjih odmora kad je pansion pun.</p>
+      <a href="#kontakt" class="btn">Rezervišite mesto</a>
+    </div>
+    <div class="pansion-img">
+      <img src="assets/pansion_za_pse_258.jpg" alt="Natkriveni boksovi pansiona za pse sa žičanim ogradama i crnim psom u jednom od njih">
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" class="contact-section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">Kontakt</span>
+      <h2>Javite se</h2>
+      <p>Pišite ili zovite, javljam se isti dan. Za štence i pansion radim po dogovoru, dolazak je moguć uz prethodni poziv.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5bbad5" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div>
+            <strong>Telefon</strong>
+            <span>063 123 4567</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5bbad5" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+          <div>
+            <strong>Email</strong>
+            <span>info@zigic.rs</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5bbad5" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>
+            <strong>Adresa</strong>
+            <span>Jakovo, Beograd</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5bbad5" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <div>
+            <strong>Radno vreme</strong>
+            <span>Svaki dan, 09-19h, po dogovoru</span>
+          </div>
+        </div>
+      </div>
+      <div class="map-placeholder" role="img" aria-label="Mapa lokacije odgajivačnice u Jakovu kod Beograda">
+        MAPA LOKACIJE - JAKOVO, BEOGRAD
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="assets/logo.png" alt="Logo odgajivačnice Žigić - silueta labradora">
+          <span>Žigić</span>
+        </div>
+        <p>Odgajivačnica labrador retrivera i pansion za pse u Jakovu kod Beograda. Uzgajamo pse engleskih krvnih linija već 15 godina.</p>
+      </div>
+      <div>
+        <h4>Stranica</h4>
+        <ul>
+          <li><a href="#o-nama">O nama</a></li>
+          <li><a href="#stenci">Štenci</a></li>
+          <li><a href="#roditelji">Roditelji</a></li>
+          <li><a href="#pansion">Pansion</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="#">063 123 4567</a></li>
+          <li><a href="#">info@zigic.rs</a></li>
+          <li><a href="#kontakt">Jakovo, Beograd</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Žigić - odgajivačnica labrador retrivera</span>
+      <span>Jakovo, Beograd</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var hamburgerBtn = document.getElementById('hamburgerBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+
+  hamburgerBtn.addEventListener('click', function () {
+    var isOpen = mobileMenu.classList.toggle('open');
+    hamburgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  var mobileLinks = mobileMenu.querySelectorAll('a');
+  mobileLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+      mobileMenu.classList.remove('open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+</body>
+</html>
