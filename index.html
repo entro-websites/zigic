@@ -4,160 +4,209 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Žigić - Odgajivačnica labrador retrivera i pansion za pse, Jakovo</title>
-<meta name="description" content="Odgajivačnica labrador retrivera Žigić iz Jakova kod Beograda. Štenci vrhunskih engleskih krvnih linija, 15+ godina iskustva, pansion za pse.">
+<meta name="description" content="Odgajivačnica labrador retrivera Žigić iz Jakova kod Beograda. Štenci engleskih krvnih linija sa rodovnikom, čipom i vakcinom, plus pansion za pse sa natkrivenim boksovima.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --accent: #5bbad5;
-    --accent-dark: #3f95ad;
-    --ink: #232628;
-    --ink-soft: #5a5f62;
-    --bg: #ffffff;
-    --bg-off: #f6f8f9;
-    --line: #e2e6e8;
+    --cream: #f4ede4;
+    --cream-2: #ede3d6;
+    --ink: #241a15;
+    --ink-2: #39291f;
+    --text: #2b211b;
+    --muted: #6e6058;
+    --accent: #d6442a;
+    --accent-dark: #b23520;
+    --line: #e3d8ca;
+    --line-soft: #eee6db;
+    --line-dark: rgba(244, 237, 228, 0.16);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'Karla', sans-serif;
-    color: var(--ink);
-    background: var(--bg);
-    line-height: 1.6;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: #ffffff;
     font-size: 16px;
+    line-height: 1.65;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3 {
+  h1, h2, h3, h4 {
     font-family: 'Playfair Display', serif;
-    font-weight: 700;
+    font-weight: 600;
+    line-height: 1.18;
     color: var(--ink);
-    line-height: 1.2;
   }
 
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
+  a { color: inherit; text-decoration: none; }
 
-  img {
-    max-width: 100%;
-    display: block;
-  }
+  img { max-width: 100%; display: block; }
 
+  ul { list-style: none; }
+
+  /* ---------- LAYOUT ---------- */
   .wrap {
     max-width: 1280px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     padding-left: 24px;
     padding-right: 24px;
   }
 
-  @media (max-width: 768px) {
-    .wrap {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
+  .section {
+    padding-top: 120px;
+    padding-bottom: 120px;
   }
 
-  /* ---------- NAVBAR ---------- */
-  header.site-header {
+  .section-cream { background: var(--cream); }
+
+  /* ---------- SHARED BITS ---------- */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+
+  .chip svg { flex-shrink: 0; }
+
+  .lead {
+    color: var(--muted);
+    font-size: 1.05rem;
+    max-width: 62ch;
+  }
+
+  .body-text {
+    color: var(--muted);
+    max-width: 62ch;
+    margin-bottom: 18px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    border: 1px solid var(--accent);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .btn:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--ink);
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    border: 1px solid var(--line);
+    white-space: nowrap;
+  }
+
+  .btn-ghost:hover { border-color: var(--ink); }
+
+  .btn-ghost-light {
+    color: #f4ede4;
+    border-color: rgba(244, 237, 228, 0.38);
+  }
+
+  .btn-ghost-light:hover { border-color: #f4ede4; background: rgba(244, 237, 228, 0.08); }
+
+  .ph {
+    background: #e6e0d7;
+    border: 1px dashed #c9bfb1;
+    color: #7d7264;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* ---------- HEADER ---------- */
+  .site-header {
     position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
-    background: var(--bg);
-    border-bottom: 1px solid var(--line);
     z-index: 100;
+    background: var(--ink);
   }
 
   .nav-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 24px;
     padding-top: 14px;
     padding-bottom: 14px;
   }
 
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+  .logo { display: flex; align-items: center; gap: 12px; }
 
-  .logo img {
-    height: 40px;
-    width: auto;
-  }
+  .logo img { height: 34px; width: auto; }
 
-  .logo span {
+  .logo-text strong {
+    display: block;
     font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: var(--ink);
-    letter-spacing: 0.5px;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: #f4ede4;
+    line-height: 1.1;
   }
 
-  nav.main-nav {
-    display: flex;
-    align-items: center;
-    gap: 32px;
+  .logo-text span {
+    display: block;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(244, 237, 228, 0.55);
   }
 
-  nav.main-nav a.nav-link {
-    font-size: 0.95rem;
-    color: var(--ink);
+  .main-nav { display: flex; align-items: center; gap: 30px; }
+
+  .main-nav a {
+    font-size: 0.93rem;
+    color: rgba(244, 237, 228, 0.78);
     white-space: nowrap;
   }
 
-  nav.main-nav a.nav-link:hover {
-    color: var(--accent-dark);
-  }
-
-  .btn {
-    display: inline-block;
-    background: var(--accent);
-    color: #fff;
-    padding: 12px 26px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    border: none;
-    cursor: pointer;
-    white-space: nowrap;
-  }
-
-  .btn:hover {
-    background: var(--accent-dark);
-  }
-
-  .btn-outline {
-    display: inline-block;
-    background: transparent;
-    color: var(--accent-dark);
-    padding: 12px 26px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    border: 1px solid var(--accent);
-    white-space: nowrap;
-  }
-
-  .btn-outline:hover {
-    background: var(--bg-off);
-  }
+  .main-nav a:hover { color: #fff; }
 
   .hamburger {
     display: none;
     background: none;
     border: none;
     cursor: pointer;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -166,500 +215,591 @@
 
   .hamburger span {
     display: block;
-    width: 26px;
+    width: 24px;
     height: 2px;
-    background: var(--ink);
+    background: #f4ede4;
   }
 
   .mobile-menu {
     display: none;
     flex-direction: column;
-    background: var(--bg);
-    border-bottom: 1px solid var(--line);
-  }
-
-  .mobile-menu.open {
-    display: flex;
-  }
-
-  .mobile-menu a.nav-link {
+    gap: 4px;
+    background: var(--ink);
+    border-top: 1px solid var(--line-dark);
     padding-top: 14px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid var(--line);
+    padding-bottom: 22px;
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu a {
+    color: rgba(244, 237, 228, 0.85);
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-size: 1rem;
   }
 
-  .mobile-menu .btn {
-    margin-top: 16px;
-    margin-bottom: 16px;
-    text-align: center;
-  }
-
-  @media (max-width: 991px) {
-    nav.main-nav {
-      display: none;
-    }
-    .hamburger {
-      display: flex;
-    }
-  }
+  .mobile-menu .btn { margin-top: 12px; align-self: flex-start; }
 
   /* ---------- HERO ---------- */
   .hero {
-    padding-top: 72px;
-    padding-bottom: 72px;
-    background: var(--bg-off);
+    position: relative;
+    background: var(--ink);
+    overflow: hidden;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
   }
 
-  .hero-grid {
+  .hero-bg { position: absolute; inset: 0; }
+
+  .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 42%;
+  }
+
+  .hero-veil {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, rgba(36, 26, 21, 0.94) 0%, rgba(36, 26, 21, 0.86) 38%, rgba(36, 26, 21, 0.5) 100%);
+  }
+
+  .hero-inner {
+    position: relative;
+    padding-top: 132px;
+    padding-bottom: 132px;
     display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 56px;
-    align-items: center;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 48px;
+    align-items: end;
   }
 
   .hero h1 {
-    font-size: 3rem;
+    font-size: clamp(2.4rem, 5.2vw, 4.1rem);
+    color: #f7f2ea;
+    max-width: 15ch;
     margin-bottom: 22px;
   }
 
-  .hero p.lead {
-    font-size: 1.1rem;
-    color: var(--ink-soft);
-    max-width: 40ch;
-    margin-bottom: 30px;
+  .hero .hero-lead {
+    color: rgba(244, 237, 228, 0.8);
+    font-size: 1.06rem;
+    max-width: 54ch;
+    margin-bottom: 32px;
   }
 
-  .hero-badges {
+  .hero .chip { color: #e9a08f; }
+
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+  .hero-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px 26px;
+    width: 260px;
+  }
+
+  .hero-card .k {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .hero-card .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .hero-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+
+  /* ---------- ICON STRIP ---------- */
+  .strip { background: var(--cream); }
+
+  .strip-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+
+  .strip-item {
     display: flex;
-    gap: 28px;
-    margin-top: 32px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-left: 1px solid var(--line);
   }
 
-  .hero-badge {
+  .strip-item:first-child { border-left: none; }
+
+  .strip-item span {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.35;
+    max-width: 15ch;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-head {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 56px;
+    align-items: end;
+  }
+
+  .about-head h2 {
+    font-size: clamp(2rem, 3.6vw, 3rem);
+    max-width: 14ch;
+  }
+
+  .about-media {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 28px;
+    margin-top: 56px;
+    align-items: start;
+  }
+
+  .about-media figure { margin: 0; }
+
+  .about-photo-big img,
+  .about-photo-big .ph {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 16px;
+    height: auto;
+  }
+
+  .about-photo-small img,
+  .about-photo-small .ph {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 16px;
+    height: auto;
+    margin-bottom: 26px;
+  }
+
+  .about-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 72px;
+    padding-top: 48px;
+    border-top: 1px solid var(--line-soft);
+  }
+
+  .stat strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: clamp(2.4rem, 4.4vw, 3.4rem);
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .stat span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.92rem;
+    max-width: 24ch;
+  }
+
+  /* ---------- USLUGE ---------- */
+  .head-center { text-align: center; max-width: 720px; margin-left: auto; margin-right: auto; }
+
+  .head-center h2 { font-size: clamp(2rem, 3.6vw, 2.9rem); margin-bottom: 16px; }
+
+  .head-center p { color: var(--muted); }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 64px;
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 26px 24px 24px;
     display: flex;
     flex-direction: column;
   }
 
-  .hero-badge strong {
+  .card-icon { margin-bottom: 18px; }
+
+  .card h3 { font-size: 1.25rem; margin-bottom: 10px; }
+
+  .card p {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin-bottom: 22px;
+  }
+
+  .card .media { margin-top: auto; }
+
+  .card img,
+  .card .ph {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 10px;
+    height: auto;
+  }
+
+  /* ---------- U CENI ---------- */
+  .prices { position: relative; overflow: hidden; }
+
+  .watermark {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    color: var(--accent-dark);
-  }
-
-  .hero-badge span {
-    font-size: 0.85rem;
-    color: var(--ink-soft);
-  }
-
-  .hero-img {
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--line);
-  }
-
-  .hero-img img {
-    width: 100%;
-    height: 420px;
-    object-fit: cover;
-  }
-
-  @media (max-width: 900px) {
-    .hero-grid {
-      grid-template-columns: 1fr;
-    }
-    .hero h1 {
-      font-size: 2.2rem;
-    }
-    .hero-img img {
-      height: 280px;
-    }
-  }
-
-  /* ---------- SECTIONS ---------- */
-  section {
-    padding-top: 96px;
-    padding-bottom: 96px;
-  }
-
-  @media (max-width: 768px) {
-    section {
-      padding-top: 56px;
-      padding-bottom: 56px;
-    }
-  }
-
-  .section-head {
-    max-width: 640px;
-    margin-bottom: 48px;
-  }
-
-  .section-head .tag {
-    color: var(--accent-dark);
     font-weight: 700;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
+    font-size: clamp(4rem, 19vw, 16.5rem);
+    line-height: 1;
+    color: rgba(36, 26, 21, 0.08);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .prices .watermark { top: 44%; }
+
+  .prices-inner { position: relative; }
+
+  .price-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 48px;
+    align-items: center;
+    margin-top: 56px;
+  }
+
+  .price-figure img,
+  .price-figure .ph {
+    width: 320px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 18px;
+    height: auto;
+  }
+
+  .price-col h3 {
+    font-size: 1.05rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    display: block;
-    margin-bottom: 10px;
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-size: 0.78rem;
   }
 
-  .section-head h2 {
-    font-size: 2.1rem;
-    margin-bottom: 14px;
-  }
-
-  .section-head p {
-    color: var(--ink-soft);
-    max-width: 65ch;
-  }
-
-  p.body-text {
-    max-width: 65ch;
-    color: var(--ink-soft);
-    margin-bottom: 16px;
-  }
-
-  /* About */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 56px;
-    align-items: center;
-  }
-
-  .about-img {
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--line);
-  }
-
-  .about-img img {
-    width: 100%;
-    height: 380px;
-    object-fit: cover;
-  }
-
-  @media (max-width: 900px) {
-    .about-grid {
-      grid-template-columns: 1fr;
-    }
-    .about-img {
-      order: -1;
-    }
-    .about-img img {
-      height: 260px;
-    }
-  }
-
-  /* Puppies / sale */
-  .sale-section {
-    background: var(--bg-off);
-  }
-
-  .sale-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 56px;
-    align-items: center;
-  }
-
-  .sale-img {
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--line);
-  }
-
-  .sale-img img {
-    width: 100%;
-    height: 380px;
-    object-fit: cover;
-  }
-
-  .info-list {
-    list-style: none;
-    margin-top: 24px;
-    margin-bottom: 24px;
-  }
-
-  .info-list li {
+  .price-row {
     display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--line);
-    color: var(--ink-soft);
+    align-items: baseline;
+    gap: 10px;
+    padding-top: 13px;
+    padding-bottom: 13px;
   }
 
-  .info-list li svg {
-    flex-shrink: 0;
-    margin-top: 3px;
-  }
+  .price-row + .price-row { border-top: 1px solid var(--line); }
 
-  @media (max-width: 900px) {
-    .sale-grid {
-      grid-template-columns: 1fr;
-    }
-    .sale-img {
-      order: -1;
-    }
-    .sale-img img {
-      height: 260px;
-    }
-  }
-
-  /* Parents / bloodlines */
-  .parents-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-  }
-
-  .parent-card {
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    overflow: hidden;
-    background: var(--bg);
-  }
-
-  .parent-card img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-  }
-
-  .parent-card .parent-body {
-    padding: 24px;
-  }
-
-  .parent-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 8px;
-  }
-
-  .parent-card p {
-    color: var(--ink-soft);
+  .price-row .name {
+    color: var(--ink);
+    font-weight: 500;
     font-size: 0.95rem;
   }
 
-  @media (max-width: 700px) {
-    .parents-grid {
-      grid-template-columns: 1fr;
-    }
+  .price-row .dots {
+    flex: 1 1 auto;
+    min-width: 16px;
+    border-bottom: 1px dotted #c4b8a8;
+    transform: translateY(-4px);
   }
 
-  /* Recognition / book */
-  .recog-section {
-    background: var(--bg-off);
+  .price-row .val {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.88rem;
+    white-space: nowrap;
   }
 
-  .recog-grid {
-    display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 56px;
-    align-items: center;
+  .price-note {
+    margin-top: 44px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.95rem;
+    max-width: 60ch;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .recog-img {
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--line);
-    background: #fff;
-  }
-
-  .recog-img img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-
-  @media (max-width: 900px) {
-    .recog-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  /* Pansion */
-  .pansion-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 56px;
-    align-items: center;
-  }
-
-  .pansion-img {
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--line);
-  }
-
-  .pansion-img img {
-    width: 100%;
-    height: 380px;
-    object-fit: cover;
-  }
-
-  @media (max-width: 900px) {
-    .pansion-grid {
-      grid-template-columns: 1fr;
-    }
-    .pansion-img img {
-      height: 260px;
-    }
-  }
-
-  /* Contact */
-  .contact-section {
-    background: var(--bg-off);
-  }
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 56px;
-  }
-
-  .contact-card {
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    background: var(--bg);
-    padding: 32px;
-  }
-
-  .contact-item {
+  /* ---------- GALERIJA ---------- */
+  .gal-head {
     display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--line);
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
   }
 
-  .contact-item:last-child {
-    border-bottom: none;
+  .gal-head h2 { font-size: clamp(2rem, 3.6vw, 2.9rem); max-width: 18ch; }
+
+  .gal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    margin-top: 56px;
   }
 
-  .contact-item svg {
-    flex-shrink: 0;
-    margin-top: 2px;
+  .gal-item img,
+  .gal-item .ph {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 16px;
+    height: auto;
+    margin-bottom: 16px;
   }
 
-  .contact-item strong {
+  .gal-item .label {
     display: block;
-    font-size: 0.85rem;
-    color: var(--ink-soft);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 4px;
+    color: var(--accent);
+    margin-bottom: 6px;
   }
 
-  .contact-item span {
-    font-size: 1rem;
-    color: var(--ink);
+  .gal-item h3 { font-size: 1.3rem; }
+
+  .gal-item-wide img {
+    object-fit: contain;
+    background: var(--ink);
+    padding: 18px;
   }
 
-  .map-placeholder {
+  /* ---------- UTISCI ---------- */
+  .reviews { position: relative; overflow: hidden; }
+
+  .reviews .watermark { bottom: 4%; }
+
+  .reviews-inner { position: relative; }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-top: 56px;
+  }
+
+  .review {
+    background: #fff;
     border: 1px solid var(--line);
-    border-radius: 8px;
-    background: #e9edee;
-    color: var(--ink-soft);
+    border-radius: 16px;
+    padding: 24px 22px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .review .quote-mark { margin-bottom: 16px; }
+
+  .review p {
+    color: var(--text);
+    font-size: 0.93rem;
+    margin-bottom: 22px;
+  }
+
+  .review-who {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid var(--line-soft);
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--cream-2);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.85rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    height: 100%;
-    min-height: 320px;
-    font-size: 0.9rem;
-    padding: 24px;
+    flex-shrink: 0;
   }
 
-  @media (max-width: 900px) {
-    .contact-grid {
-      grid-template-columns: 1fr;
-    }
+  .review-who .who strong { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; }
+
+  .review-who .who span { display: block; font-size: 0.8rem; color: var(--muted); }
+
+  .reviews-figure { margin-top: 64px; display: flex; justify-content: center; }
+
+  .reviews-figure img,
+  .reviews-figure .ph {
+    width: 300px;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 18px;
+    height: auto;
   }
 
-  /* Footer */
-  footer {
+  /* ---------- KONTAKT + FOOTER ---------- */
+  .footer-shell { background: var(--cream); }
+
+  .site-footer {
     background: var(--ink);
-    color: #cfd6d8;
-    padding-top: 56px;
-    padding-bottom: 32px;
+    color: rgba(244, 237, 228, 0.72);
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    padding-top: 104px;
+    padding-bottom: 40px;
   }
+
+  .site-footer h2, .site-footer h3, .site-footer h4 { color: #f7f2ea; }
+
+  .contact-head { max-width: 720px; }
+
+  .contact-head h2 { font-size: clamp(2rem, 3.6vw, 2.9rem); margin-bottom: 16px; }
+
+  .contact-head p { color: rgba(244, 237, 228, 0.72); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+    padding-top: 40px;
+    padding-bottom: 44px;
+    border-top: 1px solid var(--line-dark);
+    border-bottom: 1px solid var(--line-dark);
+  }
+
+  .contact-item { display: flex; gap: 14px; align-items: flex-start; }
+
+  .contact-item strong {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(244, 237, 228, 0.55);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .contact-item span { display: block; color: #f4ede4; font-size: 0.98rem; }
+
+  .contact-cta { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
 
   .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 1.6fr 1fr 1fr;
     gap: 40px;
-    margin-bottom: 40px;
+    margin-top: 72px;
+    padding-top: 48px;
+    border-top: 1px solid var(--line-dark);
   }
 
-  .footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 14px;
-  }
+  .footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
 
-  .footer-logo img {
-    height: 34px;
-  }
+  .footer-brand img { height: 34px; width: auto; }
 
-  .footer-logo span {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    color: #fff;
-  }
+  .footer-grid p { font-size: 0.92rem; max-width: 42ch; }
 
-  footer p {
-    color: #a6adaf;
-    max-width: 40ch;
-    font-size: 0.95rem;
-  }
-
-  footer h4 {
-    color: #fff;
-    font-size: 1rem;
-    margin-bottom: 16px;
-    font-family: 'Karla', sans-serif;
+  .footer-grid h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
     font-weight: 700;
+    margin-bottom: 16px;
   }
 
-  footer ul {
-    list-style: none;
-  }
+  .footer-grid li { padding-top: 6px; padding-bottom: 6px; font-size: 0.93rem; }
 
-  footer ul li {
-    margin-bottom: 10px;
-  }
-
-  footer ul li a {
-    color: #a6adaf;
-    font-size: 0.95rem;
-  }
-
-  footer ul li a:hover {
-    color: var(--accent);
-  }
+  .footer-grid li a:hover { color: #fff; }
 
   .footer-bottom {
-    border-top: 1px solid #3a3d3f;
+    margin-top: 56px;
     padding-top: 24px;
-    font-size: 0.85rem;
-    color: #83898b;
+    border-top: 1px solid var(--line-dark);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 10px;
+    font-size: 0.85rem;
+    color: rgba(244, 237, 228, 0.55);
   }
 
-  @media (max-width: 700px) {
-    .footer-grid {
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 1100px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+    .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 991px) {
+    .main-nav { display: none; }
+    .hamburger { display: flex; }
+    .hero-inner { grid-template-columns: minmax(0, 1fr); align-items: start; }
+    .hero-card { width: 100%; max-width: 320px; }
+    .strip-grid { grid-template-columns: repeat(3, 1fr); row-gap: 28px; }
+    .strip-item:nth-child(3n + 1) { border-left: none; }
+    .about-head { grid-template-columns: 1fr; gap: 24px; align-items: start; }
+    .about-head h2 { max-width: 20ch; }
+    .price-grid { grid-template-columns: 1fr; gap: 36px; }
+    .price-figure { display: flex; justify-content: center; order: -1; }
+  }
+
+  @media (max-width: 768px) {
+    .wrap { padding-left: 20px; padding-right: 20px; }
+    .section { padding-top: 76px; padding-bottom: 76px; }
+    .hero-inner { padding-top: 84px; padding-bottom: 84px; }
+    .site-footer { padding-top: 76px; }
+    .about-media { grid-template-columns: 1fr; gap: 24px; margin-top: 40px; }
+    .stats { grid-template-columns: 1fr; gap: 28px; margin-top: 48px; padding-top: 36px; }
+    .cards { grid-template-columns: 1fr; margin-top: 44px; }
+    .gal-grid { grid-template-columns: 1fr; margin-top: 40px; }
+    .reviews-grid { grid-template-columns: 1fr; margin-top: 40px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 22px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; margin-top: 48px; }
+    .footer-bottom { margin-top: 40px; }
+    .watermark { font-size: clamp(3rem, 22vw, 6rem); color: rgba(36, 26, 21, 0.055); }
+    .prices .watermark { top: 26%; }
+  }
+
+  @media (max-width: 560px) {
+    .strip-grid { grid-template-columns: repeat(2, 1fr); }
+    .strip-item { border-left: none; }
+    .price-figure img, .price-figure .ph { width: 100%; max-width: 300px; }
+    .reviews-figure img, .reviews-figure .ph { width: 100%; }
+    .hero-actions .btn, .hero-actions .btn-ghost { width: 100%; justify-content: center; }
   }
 </style>
 </head>
@@ -667,21 +807,24 @@
 
 <header class="site-header">
   <div class="wrap nav-inner">
-    <a href="#" class="logo" aria-label="Žigić - Odgajivačnica labrador retrivera, početna strana">
-      <img src="assets/logo.png" alt="Logo odgajivačnice Žigić - silueta labradora">
-      <span>Žigić</span>
+    <a href="#" class="logo" aria-label="Žigić, odgajivačnica labrador retrivera, početna strana">
+      <img src="assets/logo-light.png" alt="Logo odgajivačnice Žigić, silueta labradora">
+      <span class="logo-text">
+        <strong>Žigić</strong>
+        <span>Labrador retriver</span>
+      </span>
     </a>
 
     <nav class="main-nav">
-      <a class="nav-link" href="#o-nama">O nama</a>
-      <a class="nav-link" href="#stenci">Štenci</a>
-      <a class="nav-link" href="#roditelji">Roditelji</a>
-      <a class="nav-link" href="#pansion">Pansion</a>
-      <a class="nav-link" href="#kontakt">Kontakt</a>
+      <a href="#o-nama">O nama</a>
+      <a href="#usluge">Uzgoj i pansion</a>
+      <a href="#cene">U ceni</a>
+      <a href="#galerija">Galerija</a>
+      <a href="#utisci">Utisci</a>
       <a class="btn" href="#kontakt">Pozovite nas</a>
     </nav>
 
-    <button class="hamburger" id="hamburgerBtn" aria-label="Otvori meni" aria-expanded="false">
+    <button class="hamburger" id="hamburgerBtn" aria-label="Otvori meni" aria-expanded="false" aria-controls="mobileMenu">
       <span></span>
       <span></span>
       <span></span>
@@ -689,224 +832,446 @@
   </div>
 
   <div class="mobile-menu wrap" id="mobileMenu">
-    <a class="nav-link" href="#o-nama">O nama</a>
-    <a class="nav-link" href="#stenci">Štenci</a>
-    <a class="nav-link" href="#roditelji">Roditelji</a>
-    <a class="nav-link" href="#pansion">Pansion</a>
-    <a class="nav-link" href="#kontakt">Kontakt</a>
+    <a href="#o-nama">O nama</a>
+    <a href="#usluge">Uzgoj i pansion</a>
+    <a href="#cene">U ceni</a>
+    <a href="#galerija">Galerija</a>
+    <a href="#utisci">Utisci</a>
+    <a href="#kontakt">Kontakt</a>
     <a class="btn" href="#kontakt">Pozovite nas</a>
   </div>
 </header>
 
 <section class="hero">
-  <div class="wrap hero-grid">
+  <div class="hero-bg">
+    <img src="assets/prodaja-labradora-promo-2.jpg" alt="Šest žutih štenaca labradora stoji u drvenom boksu i gleda napolje">
+  </div>
+  <div class="hero-veil"></div>
+
+  <div class="wrap hero-inner">
     <div>
-      <h1>Labradori iz Jakova, gajeni sa pažnjom već 15 godina</h1>
-      <p class="lead">Uzgajamo labrador retrivere engleskih krvnih linija u dvorištu u Jakovu kod Beograda. Svako štene ide kod vas sa papirima, čipom i pregledom. Za sve dok ste na putu, tu je i pansion.</p>
-      <a href="#kontakt" class="btn">Pozovite nas za štenca</a>
-      <div class="hero-badges">
-        <div class="hero-badge">
-          <strong>15+</strong>
-          <span>godina uzgoja</span>
-        </div>
-        <div class="hero-badge">
-          <strong>100%</strong>
-          <span>engleske linije</span>
-        </div>
-        <div class="hero-badge">
-          <strong>Jakovo</strong>
-          <span>Beograd</span>
-        </div>
+      <span class="chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Jakovo, Beograd
+      </span>
+      <h1>Labradori engleskih linija, odgajani u dvorištu u Jakovu</h1>
+      <p class="hero-lead">Petnaest godina gajim labrador retrivere kod kuće. Štenci odlaze sa rodovnikom, čipom i prvom vakcinom. Dok ste na putu, pas može da ostane u pansionu, u istom dvorištu gde su i moji psi.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#kontakt">Pitajte za štence</a>
+        <a class="btn-ghost btn-ghost-light" href="#usluge">Pogledajte pansion</a>
       </div>
     </div>
-    <div class="hero-img">
-      <img src="assets/prodaja-labradora-promo-2.jpg" alt="Šest štenaca labradora gleda kroz vrata štale">
+
+    <div class="hero-card">
+      <span class="k">Zovite direktno</span>
+      <span class="num">063 123 4567</span>
+      <p>Javljam se isti dan. Dolazak u odgajivačnicu dogovaramo unapred.</p>
     </div>
   </div>
 </section>
 
-<section id="o-nama">
-  <div class="wrap about-grid">
-    <div>
-      <span class="tag">O nama</span>
-      <h2>Ko gaji ove pse</h2>
-      <p class="body-text">Odgajivačnicom se bavim 15 godina. Sve je počelo od jednog psa i želje da radim stvar koju znam i volim, ne od plana da se to pretvori u posao.</p>
-      <p class="body-text">Danas biram roditelje po zdravlju kukova, temperamentu i poreklu, a ne po tome koliko brzo mogu da prodam štence. Svaki par koji spojim, spajam zato što mislim da će dati zdrave i uravnotežene pse.</p>
-      <p class="body-text">Radim sa engleskim krvnim linijama, provereno kroz generacije, uz dokumentaciju koju svaki vlasnik može da vidi pre nego što se odluči.</p>
+<section class="strip">
+  <div class="wrap strip-grid">
+    <div class="strip-item">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><path d="M12 3l7 4v5c0 4.4-3 8.2-7 9-4-0.8-7-4.6-7-9V7l7-4z"/><path d="M9.5 12.2l1.8 1.8 3.4-3.6"/></svg>
+      <span>Engleske krvne linije</span>
     </div>
-    <div class="about-img">
-      <img src="assets/georgeSidebar.jpg" alt="Odrastao labrador zlatne boje stoji na travi u profilu">
+    <div class="strip-item">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+      <span>Rodovnik i mikročip</span>
     </div>
-  </div>
-</section>
-
-<section id="stenci" class="sale-section">
-  <div class="wrap sale-grid">
-    <div class="sale-img">
-      <img src="assets/prodaja-labradora-promo-2.jpg" alt="Grupa štenaca labradora u drvenom boksu">
+    <div class="strip-item">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg>
+      <span>Vakcinisan i pregledan</span>
     </div>
-    <div>
-      <span class="tag">Štenci na prodaju</span>
-      <h2>Štenci koji su spremni za novi dom</h2>
-      <p class="body-text">Štenci ostaju sa mamom i braćom najmanje 8 nedelja. Do tada su vakcinisani, čipovani i navikli na ljude, buku i dodir.</p>
-      <ul class="info-list">
-        <li>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5bbad5" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-          <span>Prva vakcina, čipovanje i mikročip pasoš pri preuzimanju</span>
-        </li>
-        <li>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5bbad5" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-          <span>Rodovnik i potvrda o poreklu roditelja</span>
-        </li>
-        <li>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5bbad5" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-          <span>Savet oko ishrane i navika za prve mesece kod kuće</span>
-        </li>
-        <li>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5bbad5" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-          <span>Dostupan sam za pitanja i posle preuzimanja štenca</span>
-        </li>
-      </ul>
-      <a href="#kontakt" class="btn">Pitajte o dostupnim štencima</a>
+    <div class="strip-item">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5.5 10v9h13v-9"/><path d="M10 19v-5h4v5"/></svg>
+      <span>Pansion sa dvorištem</span>
+    </div>
+    <div class="strip-item">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+      <span>15+ godina uzgoja</span>
     </div>
   </div>
 </section>
 
-<section id="roditelji">
+<section id="o-nama" class="section">
   <div class="wrap">
-    <div class="section-head">
-      <span class="tag">Roditelji i krvne linije</span>
-      <h2>Psi iz kojih potiču naši štenci</h2>
-      <p>Roditelje biram lično, gledam pregled kukova i laktova, temperament i to kako se ponašaju prema deci i drugim psima.</p>
+    <div class="about-head">
+      <div>
+        <span class="chip">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h16"/></svg>
+          O nama
+        </span>
+        <h2>Ko gaji ove pse i kako radi</h2>
+      </div>
+      <p class="lead">Sve je počelo od jednog psa i želje da radim ono što znam. Danas roditelje biram po zdravlju kukova, temperamentu i poreklu, ne po tome koliko brzo mogu da prodam leglo.</p>
     </div>
-    <div class="parents-grid">
-      <div class="parent-card">
-        <img src="assets/blue-king-aris.jpg" alt="Mladi labrador žute boje sedi na travi u dvorištu">
-        <div class="parent-body">
-          <h3>Aris</h3>
-          <p>Iz engleske linije, miran temperament, dobri kukovi po pregledu. Otac nekoliko naših legla u poslednje dve godine.</p>
+
+    <div class="about-media">
+      <figure class="about-photo-big">
+        <img src="assets/georgeSidebar.jpg" alt="Odrastao labrador zlatne boje stoji na travi u dvorištu, snimljen iz profila">
+      </figure>
+
+      <div class="about-photo-small">
+        <img src="assets/blue-king-aris.jpg" alt="Mladi žuti labrador sedi na travi pored kuće i gleda uvis">
+        <p class="body-text">Radim sa engleskim krvnim linijama koje se prate kroz generacije. Dokumentaciju o roditeljima možete da vidite pre nego što se odlučite, ne posle.</p>
+        <p class="body-text">Štenci rastu u kući i u dvorištu, među ljudima. Do osme nedelje naviknu se na dodir, buku i vožnju kolima, pa im prvi dan u novom domu ne bude šok.</p>
+        <div class="about-actions">
+          <a class="btn" href="#usluge">Pogledajte šta radimo</a>
+          <a class="btn-ghost" href="#kontakt">Javite se</a>
         </div>
       </div>
-      <div class="parent-card">
-        <img src="assets/georgeSidebar.jpg" alt="Odrastao labrador zlatne boje stoji uspravno na travi">
-        <div class="parent-body">
-          <h3>George</h3>
-          <p>Krupan, stabilan, sa izraženim karakteristikama rase po standardu. Radi kao pratilac dece u sopstvenoj porodici.</p>
-        </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <strong>15+</strong>
+        <span>godina uzgoja labradora u Jakovu</span>
+      </div>
+      <div class="stat">
+        <strong>8</strong>
+        <span>nedelja štene ostaje sa majkom i leglom</span>
+      </div>
+      <div class="stat">
+        <strong>100%</strong>
+        <span>štenaca odlazi sa rodovnikom i mikročipom</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="recog-section">
-  <div class="wrap recog-grid">
-    <div class="recog-img">
-      <img src="assets/book1.png" alt="Korica knjige Everyone's Dog o labrador retriveru autorke Marion Hopkinson, sa rukom pisanom posvetom">
-    </div>
-    <div>
-      <span class="tag">Priznanje</span>
-      <h2>Poznajem ovu rasu odavno</h2>
-      <p class="body-text">Marion Hopkinson, autorka knjige "Everyone's Dog" o labrador retriveru, poslala je posvetu sa rečima podrške našem uzgoju. Za nas je to potvrda da smo na dobrom putu sa izborom pasa i pristupom uzgoju.</p>
-      <p class="body-text">Ne pravim štence na brzinu. Svako leglo planiram unapred, gledam kalendar parenja i zdravlje kuje pre nego što se odlučim za spoj.</p>
-    </div>
-  </div>
-</section>
-
-<section id="pansion">
-  <div class="wrap pansion-grid">
-    <div>
-      <span class="tag">Pansion za pse</span>
-      <h2>Mesto za vašeg psa kad ste na putu</h2>
-      <p class="body-text">Pored uzgoja, imamo i pansion u Jakovu. Boksovi su natkriveni, sa dvorištem za kretanje i hlad za letnje dane.</p>
-      <p class="body-text">Pse hranimo po dogovoru, dva ili tri puta dnevno, i izvodimo ih na dvorište svaki dan, ne samo za nuždu.</p>
-      <p class="body-text">Javite se unapred da rezervišete mesto, posebno pred sezonu godišnjih odmora kad je pansion pun.</p>
-      <a href="#kontakt" class="btn">Rezervišite mesto</a>
-    </div>
-    <div class="pansion-img">
-      <img src="assets/pansion_za_pse_258.jpg" alt="Natkriveni boksovi pansiona za pse sa žičanim ogradama i crnim psom u jednom od njih">
-    </div>
-  </div>
-</section>
-
-<section id="kontakt" class="contact-section">
+<section id="usluge" class="section section-cream">
   <div class="wrap">
-    <div class="section-head">
-      <span class="tag">Kontakt</span>
-      <h2>Javite se</h2>
-      <p>Pišite ili zovite, javljam se isti dan. Za štence i pansion radim po dogovoru, dolazak je moguć uz prethodni poziv.</p>
+    <div class="head-center">
+      <span class="chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h16"/></svg>
+        Šta radimo
+      </span>
+      <h2>Uzgoj i pansion, oba u istom dvorištu</h2>
+      <p>Ne radim ništa treće. Gajim labradore i čuvam pse dok su vlasnici na putu, pa znam svakog psa koji prođe kroz dvorište.</p>
     </div>
-    <div class="contact-grid">
-      <div class="contact-card">
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="8" r="2.2"/><circle cx="12" cy="6" r="2.2"/><circle cx="17" cy="8" r="2.2"/><path d="M12 11c2.8 0 5 2.4 5 4.6 0 1.6-1.3 2.6-3 2.6h-4c-1.7 0-3-1-3-2.6C7 13.4 9.2 11 12 11z"/></svg>
+        </div>
+        <h3>Štenci labradora</h3>
+        <p>Leglo planiram unapred. Štene preuzimate sa 8 nedelja, sa prvom vakcinom, čipom i rodovnikom u ruci.</p>
+        <div class="media">
+          <div class="ph" style="aspect-ratio: 4 / 3; border-radius: 10px;" role="img" aria-label="Mesto za fotografiju šteneta starog osam nedelja">FOTOGRAFIJA ŠTENETA OD 8 NEDELJA</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="5" r="2.4"/><circle cx="6" cy="15" r="2.4"/><circle cx="18" cy="15" r="2.4"/><path d="M12 7.4v3.2M12 10.6L7.4 13.4M12 10.6l4.6 2.8"/></svg>
+        </div>
+        <h3>Roditelji i krvne linije</h3>
+        <p>Aris i George su iz engleskih linija. Pregled kukova i laktova, miran temperament, papiri koje možete da vidite.</p>
+        <div class="media">
+          <img src="assets/blue-king-aris.jpg" alt="Labrador Aris sedi na travi u dvorištu odgajivačnice">
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5.5 10v9h13v-9"/><path d="M10.5 19v-4.5h3V19"/></svg>
+        </div>
+        <h3>Pansion za pse</h3>
+        <p>Natkriveni boksovi, prostor za kretanje i hlad leti. Pse izvodim svaki dan, ne stoje zatvoreni u boksu.</p>
+        <div class="media">
+          <img src="assets/pansion_za_pse_258.jpg" alt="Natkriveni boksovi pansiona sa žičanim vratima, u jednom od njih stoji crni pas">
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><path d="M21 15a3 3 0 0 1-3 3H8l-4 3V6a3 3 0 0 1 3-3h11a3 3 0 0 1 3 3z"/><path d="M8.5 9.5h7M8.5 13h4"/></svg>
+        </div>
+        <h3>Podrška posle preuzimanja</h3>
+        <p>Zovite kad zapne oko ishrane, vakcina ili navika. Ne prestajem da se javljam kad štene ode iz kuće.</p>
+        <div class="media">
+          <div class="ph" style="aspect-ratio: 4 / 3; border-radius: 10px;" role="img" aria-label="Mesto za fotografiju vlasnika sa odraslim labradorom">FOTOGRAFIJA VLASNIKA SA PSOM</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="cene" class="section section-cream prices">
+  <span class="watermark" aria-hidden="true">cenovnik</span>
+  <div class="wrap prices-inner">
+    <div class="head-center">
+      <span class="chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h16"/></svg>
+        Šta dobijate
+      </span>
+      <h2>Šta ulazi u cenu</h2>
+    </div>
+
+    <div class="price-grid">
+      <div class="price-col">
+        <h3>Uz svako štene</h3>
+        <div class="price-row">
+          <span class="name">Prva vakcina i revakcinacija</span>
+          <span class="dots"></span>
+          <span class="val">uključeno</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Mikročip i pasoš</span>
+          <span class="dots"></span>
+          <span class="val">uključeno</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Rodovnik i podaci o roditeljima</span>
+          <span class="dots"></span>
+          <span class="val">uključeno</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Pregled veterinara pre preuzimanja</span>
+          <span class="dots"></span>
+          <span class="val">uključeno</span>
+        </div>
+      </div>
+
+      <figure class="price-figure">
+        <img src="assets/georgeSidebar.jpg" alt="Odrastao labrador George stoji u dvorištu odgajivačnice">
+      </figure>
+
+      <div class="price-col">
+        <h3>Pansion za pse</h3>
+        <div class="price-row">
+          <span class="name">Natkriven boks i dvorište</span>
+          <span class="dots"></span>
+          <span class="val">svaki dan</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Hranjenje po vašem rasporedu</span>
+          <span class="dots"></span>
+          <span class="val">2-3 puta</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Izlazak i kretanje van boksa</span>
+          <span class="dots"></span>
+          <span class="val">svaki dan</span>
+        </div>
+        <div class="price-row">
+          <span class="name">Cena boravka</span>
+          <span class="dots"></span>
+          <span class="val">na upit</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="price-note">Cena zavisi od legla i od toga koliko pas ostaje u pansionu. Zovite i reći ću vam brojku odmah, bez dolaska i bez čekanja ponude.</p>
+  </div>
+</section>
+
+<section id="galerija" class="section">
+  <div class="wrap">
+    <div class="gal-head">
+      <div>
+        <span class="chip">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h16"/></svg>
+          Galerija
+        </span>
+        <h2>Psi iz uzgoja i mesto gde žive</h2>
+      </div>
+      <a class="btn" href="#kontakt">Pitajte za slobodne štence</a>
+    </div>
+
+    <div class="gal-grid">
+      <article class="gal-item">
+        <img src="assets/prodaja-labradora-promo-2.jpg" alt="Šest žutih štenaca labradora naslonjenih na ivicu drvenog boksa">
+        <span class="label">Leglo</span>
+        <h3>Štenci pred odlazak u novi dom</h3>
+      </article>
+
+      <article class="gal-item">
+        <img src="assets/blue-king-aris.jpg" alt="Labrador Aris sedi na travi, žuta dlaka, ogrlica oko vrata">
+        <span class="label">Roditelj</span>
+        <h3>Aris, engleska linija</h3>
+      </article>
+
+      <article class="gal-item">
+        <img src="assets/georgeSidebar.jpg" alt="Labrador George stoji uspravno na travi i pokazuje građu po standardu rase">
+        <span class="label">Roditelj</span>
+        <h3>George, otac više legla</h3>
+      </article>
+
+      <article class="gal-item gal-item-wide">
+        <img src="assets/book1.png" alt="Korica knjige Everyone's Dog o labrador retriveru autorke Marion Hopkinson i rukom pisana posveta">
+        <span class="label">Priznanje</span>
+        <h3>Posveta Marion Hopkinson</h3>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- UTISCI: tekstovi ispod su primeri. Zamenite ih pravim porukama vlasnika pre objave sajta. -->
+<section id="utisci" class="section section-cream reviews">
+  <span class="watermark" aria-hidden="true">utisci</span>
+  <div class="wrap reviews-inner">
+    <div class="head-center">
+      <span class="chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h16"/></svg>
+        Utisci
+      </span>
+      <h2>Šta kažu vlasnici</h2>
+    </div>
+
+    <div class="reviews-grid">
+      <article class="review">
+        <span class="quote-mark">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><path d="M9 7H5.5A2.5 2.5 0 0 0 3 9.5V13h6V7zM9 13c0 2.5-1.6 3.8-3.5 4"/><path d="M21 7h-3.5A2.5 2.5 0 0 0 15 9.5V13h6V7zm0 6c0 2.5-1.6 3.8-3.5 4"/></svg>
+        </span>
+        <p>Štene je došlo kod nas mirno i prvu noć prespavalo bez cviljenja. Papiri su bili spremni na dan preuzimanja.</p>
+        <div class="review-who">
+          <span class="avatar" aria-hidden="true">MP</span>
+          <span class="who">
+            <strong>Milan P.</strong>
+            <span>Novi Beograd</span>
+          </span>
+        </div>
+      </article>
+
+      <article class="review">
+        <span class="quote-mark">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><path d="M9 7H5.5A2.5 2.5 0 0 0 3 9.5V13h6V7zM9 13c0 2.5-1.6 3.8-3.5 4"/><path d="M21 7h-3.5A2.5 2.5 0 0 0 15 9.5V13h6V7zm0 6c0 2.5-1.6 3.8-3.5 4"/></svg>
+        </span>
+        <p>Zvala sam dva puta posle preuzimanja oko ishrane. Oba puta se javio i objasnio bez žurbe.</p>
+        <div class="review-who">
+          <span class="avatar" aria-hidden="true">JS</span>
+          <span class="who">
+            <strong>Jelena S.</strong>
+            <span>Zemun</span>
+          </span>
+        </div>
+      </article>
+
+      <article class="review">
+        <span class="quote-mark">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><path d="M9 7H5.5A2.5 2.5 0 0 0 3 9.5V13h6V7zM9 13c0 2.5-1.6 3.8-3.5 4"/><path d="M21 7h-3.5A2.5 2.5 0 0 0 15 9.5V13h6V7zm0 6c0 2.5-1.6 3.8-3.5 4"/></svg>
+        </span>
+        <p>Ostavili smo psa na deset dana. Vratio se čist, nahranjen i miran, kao da je bio kod kuće.</p>
+        <div class="review-who">
+          <span class="avatar" aria-hidden="true">NM</span>
+          <span class="who">
+            <strong>Nikola M.</strong>
+            <span>Surčin</span>
+          </span>
+        </div>
+      </article>
+
+      <article class="review">
+        <span class="quote-mark">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><path d="M9 7H5.5A2.5 2.5 0 0 0 3 9.5V13h6V7zM9 13c0 2.5-1.6 3.8-3.5 4"/><path d="M21 7h-3.5A2.5 2.5 0 0 0 15 9.5V13h6V7zm0 6c0 2.5-1.6 3.8-3.5 4"/></svg>
+        </span>
+        <p>Videli smo oba roditelja pre nego što smo se odlučili. To nam je najviše značilo kod izbora.</p>
+        <div class="review-who">
+          <span class="avatar" aria-hidden="true">AT</span>
+          <span class="who">
+            <strong>Ana T.</strong>
+            <span>Beograd</span>
+          </span>
+        </div>
+      </article>
+    </div>
+
+    <figure class="reviews-figure">
+      <img src="assets/pansion_za_pse_258.jpg" alt="Dvorište pansiona sa natkrivenim boksovima i crnim psom kraj ograde">
+    </figure>
+  </div>
+</section>
+
+<div class="footer-shell">
+  <footer id="kontakt" class="site-footer">
+    <div class="wrap">
+      <div class="contact-head">
+        <span class="chip">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h16"/></svg>
+          Kontakt
+        </span>
+        <h2>Javite se</h2>
+        <p>Pišite ili zovite. Za dolazak se dogovorimo unapred, da budem kod kuće kad stignete i da vidite pse na miru.</p>
+      </div>
+
+      <div class="contact-grid">
         <div class="contact-item">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5bbad5" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>
             <strong>Telefon</strong>
             <span>063 123 4567</span>
-          </div>
+          </span>
         </div>
         <div class="contact-item">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5bbad5" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
-          <div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+          <span>
             <strong>Email</strong>
             <span>info@zigic.rs</span>
-          </div>
+          </span>
         </div>
         <div class="contact-item">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5bbad5" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>
             <strong>Adresa</strong>
             <span>Jakovo, Beograd</span>
-          </div>
+          </span>
         </div>
         <div class="contact-item">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5bbad5" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          <div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+          <span>
             <strong>Radno vreme</strong>
-            <span>Svaki dan, 09-19h, po dogovoru</span>
-          </div>
+            <span>Svaki dan, 09-19h</span>
+          </span>
         </div>
       </div>
-      <div class="map-placeholder" role="img" aria-label="Mapa lokacije odgajivačnice u Jakovu kod Beograda">
-        MAPA LOKACIJE - JAKOVO, BEOGRAD
-      </div>
-    </div>
-  </div>
-</section>
 
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo">
-          <img src="assets/logo.png" alt="Logo odgajivačnice Žigić - silueta labradora">
-          <span>Žigić</span>
+      <div class="contact-cta">
+        <a class="btn" href="tel:0631234567">Pozovite 063 123 4567</a>
+        <a class="btn-ghost btn-ghost-light" href="mailto:info@zigic.rs">Pišite na mejl</a>
+      </div>
+
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="assets/logo-light.png" alt="">
+            <span class="logo-text">
+              <strong>Žigić</strong>
+              <span>Labrador retriver</span>
+            </span>
+          </div>
+          <p>Odgajivačnica labrador retrivera i pansion za pse u Jakovu kod Beograda. Psi engleskih krvnih linija, uzgoj u kući i dvorištu već 15 godina.</p>
         </div>
-        <p>Odgajivačnica labrador retrivera i pansion za pse u Jakovu kod Beograda. Uzgajamo pse engleskih krvnih linija već 15 godina.</p>
+        <div>
+          <h4>Stranica</h4>
+          <ul>
+            <li><a href="#o-nama">O nama</a></li>
+            <li><a href="#usluge">Uzgoj i pansion</a></li>
+            <li><a href="#cene">U ceni</a></li>
+            <li><a href="#galerija">Galerija</a></li>
+            <li><a href="#utisci">Utisci</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="tel:0631234567">063 123 4567</a></li>
+            <li><a href="mailto:info@zigic.rs">info@zigic.rs</a></li>
+            <li><a href="#kontakt">Jakovo, Beograd</a></li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h4>Stranica</h4>
-        <ul>
-          <li><a href="#o-nama">O nama</a></li>
-          <li><a href="#stenci">Štenci</a></li>
-          <li><a href="#roditelji">Roditelji</a></li>
-          <li><a href="#pansion">Pansion</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Kontakt</h4>
-        <ul>
-          <li><a href="#">063 123 4567</a></li>
-          <li><a href="#">info@zigic.rs</a></li>
-          <li><a href="#kontakt">Jakovo, Beograd</a></li>
-        </ul>
+
+      <div class="footer-bottom">
+        <span>© 2026 Žigić, odgajivačnica labrador retrivera</span>
+        <span>Jakovo, Beograd</span>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2024 Žigić - odgajivačnica labrador retrivera</span>
-      <span>Jakovo, Beograd</span>
-    </div>
-  </div>
-</footer>
+  </footer>
+</div>
 
 <script>
   var hamburgerBtn = document.getElementById('hamburgerBtn');
@@ -917,8 +1282,7 @@
     hamburgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 
-  var mobileLinks = mobileMenu.querySelectorAll('a');
-  mobileLinks.forEach(function (link) {
+  mobileMenu.querySelectorAll('a').forEach(function (link) {
     link.addEventListener('click', function () {
       mobileMenu.classList.remove('open');
       hamburgerBtn.setAttribute('aria-expanded', 'false');
