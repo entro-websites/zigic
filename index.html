@@ -16,8 +16,8 @@
     --ink-2: #39291f;
     --text: #2b211b;
     --muted: #6e6058;
-    --accent: #d6442a;
-    --accent-dark: #b23520;
+    --accent: #5bbad5;
+    --accent-dark: #3f95ad;
     --line: #e3d8ca;
     --line-soft: #eee6db;
     --line-dark: rgba(244, 237, 228, 0.16);
@@ -75,7 +75,7 @@
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--accent-dark);
     margin-bottom: 18px;
   }
 
@@ -289,7 +289,7 @@
     margin-bottom: 32px;
   }
 
-  .hero .chip { color: #e9a08f; }
+  .hero .chip { color: #9fd6e6; }
 
   .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
 
@@ -305,7 +305,7 @@
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--accent-dark);
     display: block;
     margin-bottom: 8px;
   }
@@ -409,7 +409,7 @@
     font-family: 'Playfair Display', serif;
     font-weight: 600;
     font-size: clamp(2.4rem, 4.4vw, 3.4rem);
-    color: var(--accent);
+    color: var(--accent-dark);
     line-height: 1;
     margin-bottom: 10px;
   }
@@ -509,7 +509,7 @@
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--accent-dark);
     margin-bottom: 20px;
     font-size: 0.78rem;
   }
@@ -538,7 +538,7 @@
   }
 
   .price-row .val {
-    color: var(--accent);
+    color: var(--accent-dark);
     font-weight: 700;
     font-size: 0.88rem;
     white-space: nowrap;
@@ -588,7 +588,7 @@
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--accent-dark);
     margin-bottom: 6px;
   }
 
@@ -645,7 +645,7 @@
     height: 40px;
     border-radius: 50%;
     background: var(--cream-2);
-    color: var(--accent);
+    color: var(--accent-dark);
     font-weight: 700;
     font-size: 0.85rem;
     display: flex;
@@ -669,36 +669,45 @@
     height: auto;
   }
 
-  /* ---------- KONTAKT + FOOTER ---------- */
-  .footer-shell { background: var(--cream); }
+  /* ---------- KONTAKT (zasebna CTA sekcija) ---------- */
+  .cta-section { background: #fff; }
+
+  .cta-box {
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding-top: 56px;
+    padding-bottom: 56px;
+    padding-left: 48px;
+    padding-right: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .cta-box h2 { font-size: clamp(2rem, 3.6vw, 2.9rem); margin-bottom: 16px; }
+
+  .cta-box > div > p { color: var(--muted); max-width: 46ch; }
+
+  .cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px 24px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  .footer-shell { background: #fff; }
 
   .site-footer {
     background: var(--ink);
     color: rgba(244, 237, 228, 0.72);
     border-top-left-radius: 28px;
     border-top-right-radius: 28px;
-    padding-top: 104px;
+    padding-top: 84px;
     padding-bottom: 40px;
   }
 
   .site-footer h2, .site-footer h3, .site-footer h4 { color: #f7f2ea; }
-
-  .contact-head { max-width: 720px; }
-
-  .contact-head h2 { font-size: clamp(2rem, 3.6vw, 2.9rem); margin-bottom: 16px; }
-
-  .contact-head p { color: rgba(244, 237, 228, 0.72); }
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    margin-top: 48px;
-    padding-top: 40px;
-    padding-bottom: 44px;
-    border-top: 1px solid var(--line-dark);
-    border-bottom: 1px solid var(--line-dark);
-  }
 
   .contact-item { display: flex; gap: 14px; align-items: flex-start; }
 
@@ -707,22 +716,19 @@
     font-size: 0.72rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgba(244, 237, 228, 0.55);
+    color: var(--muted);
     font-weight: 700;
     margin-bottom: 4px;
   }
 
-  .contact-item span { display: block; color: #f4ede4; font-size: 0.98rem; }
+  .contact-item span { display: block; color: var(--ink); font-size: 0.98rem; }
 
-  .contact-cta { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .contact-cta { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
 
   .footer-grid {
     display: grid;
     grid-template-columns: 1.6fr 1fr 1fr;
     gap: 40px;
-    margin-top: 72px;
-    padding-top: 48px;
-    border-top: 1px solid var(--line-dark);
   }
 
   .footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
@@ -760,7 +766,6 @@
   @media (max-width: 1100px) {
     .cards { grid-template-columns: repeat(2, 1fr); }
     .reviews-grid { grid-template-columns: repeat(2, 1fr); }
-    .contact-grid { grid-template-columns: repeat(2, 1fr); }
     .footer-grid { grid-template-columns: 1fr 1fr; }
   }
 
@@ -774,6 +779,7 @@
     .about-head { grid-template-columns: 1fr; gap: 24px; align-items: start; }
     .about-head h2 { max-width: 20ch; }
     .price-grid { grid-template-columns: 1fr; gap: 36px; }
+    .cta-box { grid-template-columns: 1fr; gap: 36px; }
     .price-figure { display: flex; justify-content: center; order: -1; }
   }
 
@@ -787,8 +793,16 @@
     .cards { grid-template-columns: 1fr; margin-top: 44px; }
     .gal-grid { grid-template-columns: 1fr; margin-top: 40px; }
     .reviews-grid { grid-template-columns: 1fr; margin-top: 40px; }
-    .contact-grid { grid-template-columns: 1fr; gap: 22px; }
-    .footer-grid { grid-template-columns: 1fr; gap: 32px; margin-top: 48px; }
+    .cta-box {
+      grid-template-columns: 1fr;
+      gap: 36px;
+      padding-top: 36px;
+      padding-bottom: 36px;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    .cta-grid { grid-template-columns: 1fr; gap: 22px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
     .footer-bottom { margin-top: 40px; }
     .watermark { font-size: clamp(3rem, 22vw, 6rem); color: rgba(36, 26, 21, 0.055); }
     .prices .watermark { top: 26%; }
@@ -873,23 +887,23 @@
 <section class="strip">
   <div class="wrap strip-grid">
     <div class="strip-item">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><path d="M12 3l7 4v5c0 4.4-3 8.2-7 9-4-0.8-7-4.6-7-9V7l7-4z"/><path d="M9.5 12.2l1.8 1.8 3.4-3.6"/></svg>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3f95ad" stroke-width="1.6" aria-hidden="true"><path d="M12 3l7 4v5c0 4.4-3 8.2-7 9-4-0.8-7-4.6-7-9V7l7-4z"/><path d="M9.5 12.2l1.8 1.8 3.4-3.6"/></svg>
       <span>Engleske krvne linije</span>
     </div>
     <div class="strip-item">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3f95ad" stroke-width="1.6" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
       <span>Rodovnik i mikročip</span>
     </div>
     <div class="strip-item">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3f95ad" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg>
       <span>Vakcinisan i pregledan</span>
     </div>
     <div class="strip-item">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5.5 10v9h13v-9"/><path d="M10 19v-5h4v5"/></svg>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3f95ad" stroke-width="1.6" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5.5 10v9h13v-9"/><path d="M10 19v-5h4v5"/></svg>
       <span>Pansion sa dvorištem</span>
     </div>
     <div class="strip-item">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3f95ad" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
       <span>15+ godina uzgoja</span>
     </div>
   </div>
@@ -955,7 +969,7 @@
     <div class="cards">
       <article class="card">
         <div class="card-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="8" r="2.2"/><circle cx="12" cy="6" r="2.2"/><circle cx="17" cy="8" r="2.2"/><path d="M12 11c2.8 0 5 2.4 5 4.6 0 1.6-1.3 2.6-3 2.6h-4c-1.7 0-3-1-3-2.6C7 13.4 9.2 11 12 11z"/></svg>
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3f95ad" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="8" r="2.2"/><circle cx="12" cy="6" r="2.2"/><circle cx="17" cy="8" r="2.2"/><path d="M12 11c2.8 0 5 2.4 5 4.6 0 1.6-1.3 2.6-3 2.6h-4c-1.7 0-3-1-3-2.6C7 13.4 9.2 11 12 11z"/></svg>
         </div>
         <h3>Štenci labradora</h3>
         <p>Leglo planiram unapred. Štene preuzimate sa 8 nedelja, sa prvom vakcinom, čipom i rodovnikom u ruci.</p>
@@ -966,7 +980,7 @@
 
       <article class="card">
         <div class="card-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="5" r="2.4"/><circle cx="6" cy="15" r="2.4"/><circle cx="18" cy="15" r="2.4"/><path d="M12 7.4v3.2M12 10.6L7.4 13.4M12 10.6l4.6 2.8"/></svg>
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3f95ad" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="5" r="2.4"/><circle cx="6" cy="15" r="2.4"/><circle cx="18" cy="15" r="2.4"/><path d="M12 7.4v3.2M12 10.6L7.4 13.4M12 10.6l4.6 2.8"/></svg>
         </div>
         <h3>Roditelji i krvne linije</h3>
         <p>Aris i George su iz engleskih linija. Pregled kukova i laktova, miran temperament, papiri koje možete da vidite.</p>
@@ -977,7 +991,7 @@
 
       <article class="card">
         <div class="card-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5.5 10v9h13v-9"/><path d="M10.5 19v-4.5h3V19"/></svg>
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3f95ad" stroke-width="1.6" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5.5 10v9h13v-9"/><path d="M10.5 19v-4.5h3V19"/></svg>
         </div>
         <h3>Pansion za pse</h3>
         <p>Natkriveni boksovi, prostor za kretanje i hlad leti. Pse izvodim svaki dan, ne stoje zatvoreni u boksu.</p>
@@ -988,7 +1002,7 @@
 
       <article class="card">
         <div class="card-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><path d="M21 15a3 3 0 0 1-3 3H8l-4 3V6a3 3 0 0 1 3-3h11a3 3 0 0 1 3 3z"/><path d="M8.5 9.5h7M8.5 13h4"/></svg>
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3f95ad" stroke-width="1.6" aria-hidden="true"><path d="M21 15a3 3 0 0 1-3 3H8l-4 3V6a3 3 0 0 1 3-3h11a3 3 0 0 1 3 3z"/><path d="M8.5 9.5h7M8.5 13h4"/></svg>
         </div>
         <h3>Podrška posle preuzimanja</h3>
         <p>Zovite kad zapne oko ishrane, vakcina ili navika. Ne prestajem da se javljam kad štene ode iz kuće.</p>
@@ -1125,7 +1139,7 @@
     <div class="reviews-grid">
       <article class="review">
         <span class="quote-mark">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><path d="M9 7H5.5A2.5 2.5 0 0 0 3 9.5V13h6V7zM9 13c0 2.5-1.6 3.8-3.5 4"/><path d="M21 7h-3.5A2.5 2.5 0 0 0 15 9.5V13h6V7zm0 6c0 2.5-1.6 3.8-3.5 4"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3f95ad" stroke-width="1.6" aria-hidden="true"><path d="M9 7H5.5A2.5 2.5 0 0 0 3 9.5V13h6V7zM9 13c0 2.5-1.6 3.8-3.5 4"/><path d="M21 7h-3.5A2.5 2.5 0 0 0 15 9.5V13h6V7zm0 6c0 2.5-1.6 3.8-3.5 4"/></svg>
         </span>
         <p>Štene je došlo kod nas mirno i prvu noć prespavalo bez cviljenja. Papiri su bili spremni na dan preuzimanja.</p>
         <div class="review-who">
@@ -1139,7 +1153,7 @@
 
       <article class="review">
         <span class="quote-mark">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><path d="M9 7H5.5A2.5 2.5 0 0 0 3 9.5V13h6V7zM9 13c0 2.5-1.6 3.8-3.5 4"/><path d="M21 7h-3.5A2.5 2.5 0 0 0 15 9.5V13h6V7zm0 6c0 2.5-1.6 3.8-3.5 4"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3f95ad" stroke-width="1.6" aria-hidden="true"><path d="M9 7H5.5A2.5 2.5 0 0 0 3 9.5V13h6V7zM9 13c0 2.5-1.6 3.8-3.5 4"/><path d="M21 7h-3.5A2.5 2.5 0 0 0 15 9.5V13h6V7zm0 6c0 2.5-1.6 3.8-3.5 4"/></svg>
         </span>
         <p>Zvala sam dva puta posle preuzimanja oko ishrane. Oba puta se javio i objasnio bez žurbe.</p>
         <div class="review-who">
@@ -1153,7 +1167,7 @@
 
       <article class="review">
         <span class="quote-mark">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><path d="M9 7H5.5A2.5 2.5 0 0 0 3 9.5V13h6V7zM9 13c0 2.5-1.6 3.8-3.5 4"/><path d="M21 7h-3.5A2.5 2.5 0 0 0 15 9.5V13h6V7zm0 6c0 2.5-1.6 3.8-3.5 4"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3f95ad" stroke-width="1.6" aria-hidden="true"><path d="M9 7H5.5A2.5 2.5 0 0 0 3 9.5V13h6V7zM9 13c0 2.5-1.6 3.8-3.5 4"/><path d="M21 7h-3.5A2.5 2.5 0 0 0 15 9.5V13h6V7zm0 6c0 2.5-1.6 3.8-3.5 4"/></svg>
         </span>
         <p>Ostavili smo psa na deset dana. Vratio se čist, nahranjen i miran, kao da je bio kod kuće.</p>
         <div class="review-who">
@@ -1167,7 +1181,7 @@
 
       <article class="review">
         <span class="quote-mark">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><path d="M9 7H5.5A2.5 2.5 0 0 0 3 9.5V13h6V7zM9 13c0 2.5-1.6 3.8-3.5 4"/><path d="M21 7h-3.5A2.5 2.5 0 0 0 15 9.5V13h6V7zm0 6c0 2.5-1.6 3.8-3.5 4"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3f95ad" stroke-width="1.6" aria-hidden="true"><path d="M9 7H5.5A2.5 2.5 0 0 0 3 9.5V13h6V7zM9 13c0 2.5-1.6 3.8-3.5 4"/><path d="M21 7h-3.5A2.5 2.5 0 0 0 15 9.5V13h6V7zm0 6c0 2.5-1.6 3.8-3.5 4"/></svg>
         </span>
         <p>Videli smo oba roditelja pre nego što smo se odlučili. To nam je najviše značilo kod izbora.</p>
         <div class="review-who">
@@ -1186,54 +1200,59 @@
   </div>
 </section>
 
-<div class="footer-shell">
-  <footer id="kontakt" class="site-footer">
-    <div class="wrap">
-      <div class="contact-head">
+<section id="kontakt" class="section cta-section">
+  <div class="wrap">
+    <div class="cta-box">
+      <div>
         <span class="chip">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h16"/></svg>
           Kontakt
         </span>
         <h2>Javite se</h2>
         <p>Pišite ili zovite. Za dolazak se dogovorimo unapred, da budem kod kuće kad stignete i da vidite pse na miru.</p>
+        <div class="contact-cta">
+          <a class="btn" href="tel:0631234567">Pozovite 063 123 4567</a>
+          <a class="btn-ghost" href="mailto:info@zigic.rs">Pišite na mejl</a>
+        </div>
       </div>
 
-      <div class="contact-grid">
+      <div class="cta-grid">
         <div class="contact-item">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3f95ad" stroke-width="1.6" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span>
             <strong>Telefon</strong>
             <span>063 123 4567</span>
           </span>
         </div>
         <div class="contact-item">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3f95ad" stroke-width="1.6" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
           <span>
             <strong>Email</strong>
             <span>info@zigic.rs</span>
           </span>
         </div>
         <div class="contact-item">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3f95ad" stroke-width="1.6" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           <span>
             <strong>Adresa</strong>
             <span>Jakovo, Beograd</span>
           </span>
         </div>
         <div class="contact-item">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d6442a" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3f95ad" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
           <span>
             <strong>Radno vreme</strong>
             <span>Svaki dan, 09-19h</span>
           </span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="contact-cta">
-        <a class="btn" href="tel:0631234567">Pozovite 063 123 4567</a>
-        <a class="btn-ghost btn-ghost-light" href="mailto:info@zigic.rs">Pišite na mejl</a>
-      </div>
-
+<div class="footer-shell">
+  <footer class="site-footer">
+    <div class="wrap">
       <div class="footer-grid">
         <div>
           <div class="footer-brand">
