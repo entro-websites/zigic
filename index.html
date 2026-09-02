@@ -157,25 +157,6 @@
     z-index: 0;
   }
 
-  .ph {
-    background: var(--cream-2);
-    border: 1px dashed var(--tan);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #a2907f;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-
   /* ---------- TOPBAR ---------- */
   .topbar {
     background: var(--ink);
@@ -639,7 +620,40 @@
 
   .trust-card .media { height: 260px; }
   .trust-card .media img { width: 100%; height: 100%; object-fit: cover; }
-  .trust-card .ph { height: 260px; border: none; border-bottom: 1px dashed var(--tan); }
+  .media-ghost {
+    height: 260px;
+    background: var(--cream-2);
+    border-bottom: 1px solid var(--line-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .media-ghost svg {
+    color: var(--tan);
+    position: relative;
+    z-index: 1;
+    margin-top: 56px;
+  }
+
+  .media-ghost::after {
+    content: "štenci";
+    position: absolute;
+    top: 12px;
+    left: 22px;
+    font-family: 'Playfair Display', serif;
+    font-size: 5.2rem;
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    color: rgba(44, 30, 23, 0.08);
+    user-select: none;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 0;
+  }
   .trust-card .body { padding: 22px 24px 26px; }
 
   .trust-card small {
@@ -761,8 +775,17 @@
     flex-direction: column;
   }
 
-  .news-card .ph { height: 210px; border: none; border-bottom: 1px dashed var(--tan); }
-  .news-card .body { padding: 24px 26px 28px; }
+  .news-card .body { padding: 32px 28px 32px; }
+
+  .news-num {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--tan);
+    margin-bottom: 20px;
+  }
 
   .news-meta {
     display: flex;
@@ -781,6 +804,69 @@
   .news-card p { font-size: 0.9rem; color: var(--muted); }
 
   .news-cta { text-align: center; margin-top: 48px; }
+
+  /* ---------- FAQ ---------- */
+  .faq-list {
+    max-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 1px solid var(--line);
+  }
+
+  .faq-item { border-bottom: 1px solid var(--line); }
+
+  .faq-q {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: none;
+    border: 0;
+    padding: 24px 0;
+    text-align: left;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.12rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--ink);
+  }
+
+  .faq-q .sign {
+    flex: 0 0 auto;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .faq-item.open .faq-q .sign {
+    transform: rotate(180deg);
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+
+  .faq-a p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    max-width: 68ch;
+    padding-bottom: 24px;
+  }
+
+  .faq-cta { text-align: center; margin-top: 48px; }
 
   /* ---------- FOOTER ---------- */
   .footer { background: var(--ink); color: rgba(247, 241, 232, 0.72); position: relative; overflow: hidden; }
@@ -949,6 +1035,7 @@
       <a href="#o-nama">O nama</a>
       <a href="#utisci">Utisci</a>
       <a href="#saveti">Saveti</a>
+      <a href="#pitanja">Pitanja</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
 
@@ -977,6 +1064,7 @@
       <a href="#o-nama">O nama</a>
       <a href="#utisci">Utisci</a>
       <a href="#saveti">Saveti</a>
+      <a href="#pitanja">Pitanja</a>
       <a href="#kontakt">Kontakt</a>
       <a href="tel:+381631234567" class="btn">Pozovite 063 123 4567</a>
     </div>
@@ -1236,7 +1324,7 @@
       </article>
 
       <article class="trust-card">
-        <div class="media ph">FOTOGRAFIJA ŠTENACA U DVORIŠTU, 6—8 NEDELJA</div>
+        <div class="media-ghost"><svg width="76" height="76" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6.5" cy="10.5" r="1.8"/><circle cx="10" cy="6.8" r="1.8"/><circle cx="14" cy="6.8" r="1.8"/><circle cx="17.5" cy="10.5" r="1.8"/><path d="M12 11c-2.6 0-5 2-5 4.4 0 1.7 1.3 2.8 3 2.8 1.2 0 1.4-.6 2-.6s.8.6 2 .6c1.7 0 3-1.1 3-2.8C17 13 14.6 11 12 11z"/></svg></div>
         <div class="body">
           <small>Odrastanje</small>
           <h3>Štenci u kući i dvorištu</h3>
@@ -1319,8 +1407,8 @@
 
     <div class="news-grid">
       <article class="news-card">
-        <div class="ph">FOTOGRAFIJA ŠTENETA POKRAJ ČINIJE ZA HRANU</div>
         <div class="body">
+          <span class="news-num">01</span>
           <div class="news-meta">Ishrana <i>—</i> prvi meseci</div>
           <h3>Kako se hrani štene u prvim nedeljama kod kuće</h3>
           <p>Prvih desetak dana ostanite na hrani na koju je štene naviklo, pa tek onda menjajte. Nagla promena znači proliv i nepotrebnu vožnju kod veterinara.</p>
@@ -1328,8 +1416,8 @@
       </article>
 
       <article class="news-card">
-        <div class="ph">FOTOGRAFIJA ŠTENETA U NOVOM DOMU</div>
         <div class="body">
+          <span class="news-num">02</span>
           <div class="news-meta">Navike <i>—</i> prva noć</div>
           <h3>Prva noć u novom domu prođe lakše nego što mislite</h3>
           <p>Ležaj postavite blizu sebe, bez uzimanja u krevet. Štene koje je odraslo među ljudima traži prisustvo, ne krevet, i za par noći se smiri.</p>
@@ -1337,8 +1425,8 @@
       </article>
 
       <article class="news-card">
-        <div class="ph">FOTOGRAFIJA PSA U PANSIONU</div>
         <div class="body">
+          <span class="news-num">03</span>
           <div class="news-meta">Pansion <i>—</i> priprema</div>
           <h3>Šta poneti kad pas ostaje u pansionu</h3>
           <p>Njegova hrana, raspored obroka i podaci veterinara. Ako pas pije terapiju, donesite je u originalnom pakovanju i napišite doze.</p>
@@ -1348,6 +1436,73 @@
 
     <div class="news-cta">
       <a href="tel:+381631234567" class="btn">Pitajte za savet — 063 123 4567</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PITANJA ================= -->
+<section class="section section-cream" id="pitanja">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="chip">Česta pitanja</span>
+      <h2>Pitanja pre nego što pozovete</h2>
+      <p class="lead">Odgovori na ono što me najčešće pitaju telefonom. Ako vaše pitanje nije ovde, zovite i reći ću vam odmah.</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item open">
+        <button class="faq-q" type="button" aria-expanded="true" aria-controls="faq-a-0">
+          Kada je sledeće leglo i mogu li da rezervišem štene unapred?
+          <span class="sign"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="faq-a" id="faq-a-0">
+          <p>Leglo planiram unapred, pa se termini znaju nekoliko meseci ranije. Rezervacija se radi telefonom, po redosledu javljanja, i ne tražim kaparu dok štenci ne stignu.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-1">
+          Mogu li da vidim roditelje pre nego što se odlučim?
+          <span class="sign"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="faq-a" id="faq-a-1">
+          <p>Možete, i to pre kupovine, ne posle. Dođete u dvorište u Jakovu, vidite Arisa i Georgea uživo i pogledate papire i nalaze o kukovima i laktovima na miru.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-2">
+          Sa koliko nedelja štene odlazi iz odgajivačnice?
+          <span class="sign"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="faq-a" id="faq-a-2">
+          <p>Sa osam nedelja. Do tada ostaje sa majkom i leglom, dobija prvu vakcinu, mikročip i pregled veterinara, a vi ga preuzimate sa rodovnikom u ruci.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-3">
+          Šta treba da donesem kad pas ostaje u pansionu?
+          <span class="sign"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="faq-a" id="faq-a-3">
+          <p>Njegovu hranu, raspored obroka i podatke vašeg veterinara. Ako pije terapiju, donesite je u originalnom pakovanju i napišite doze, da ne bude zabune.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-4">
+          Šaljete li štence van Beograda?
+          <span class="sign"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="faq-a" id="faq-a-4">
+          <p>Štene se preuzima lično, u dvorištu. Tako vidite gde je odraslo i imamo vremena da prođemo kroz ishranu i navike, što telefonom ne može da se ispriča do kraja.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-cta">
+      <a href="tel:+381631234567" class="btn">Pozovite 063 123 4567</a>
     </div>
   </div>
 </section>
@@ -1375,6 +1530,7 @@
           <li><a href="#o-nama">O nama</a></li>
           <li><a href="#utisci">Utisci</a></li>
           <li><a href="#saveti">Saveti</a></li>
+          <li><a href="#pitanja">Pitanja</a></li>
         </ul>
       </div>
 
@@ -1471,6 +1627,35 @@
     document.getElementById('testiNext').addEventListener('click', function () { show(idx + 1); });
 
     show(0);
+
+    // ---- FAQ akordeon ----
+    var faqItems = document.querySelectorAll('.faq-item');
+
+    function setHeight(item) {
+      var body = item.querySelector('.faq-a');
+      body.style.maxHeight = item.classList.contains('open') ? body.scrollHeight + 'px' : '0px';
+    }
+
+    faqItems.forEach(function (item) {
+      setHeight(item);
+      item.querySelector('.faq-q').addEventListener('click', function () {
+        var willOpen = !item.classList.contains('open');
+        faqItems.forEach(function (other) {
+          other.classList.remove('open');
+          other.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+          setHeight(other);
+        });
+        if (willOpen) {
+          item.classList.add('open');
+          this.setAttribute('aria-expanded', 'true');
+          setHeight(item);
+        }
+      });
+    });
+
+    window.addEventListener('resize', function () {
+      faqItems.forEach(setHeight);
+    });
   })();
 </script>
 
