@@ -207,7 +207,7 @@
     color: var(--muted);
   }
 
-  .nav { display: flex; align-items: center; gap: 30px; }
+  .nav { display: flex; align-items: center; gap: 30px; white-space: nowrap; }
 
   .nav a {
     font-size: 0.9rem;
@@ -791,27 +791,79 @@
   .trust-card p { font-size: 0.9rem; color: var(--muted); }
 
   .stat-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    background: #fff;
+    border: 1px solid var(--line-soft);
+    border-radius: var(--r-big);
+    padding: 34px 40px;
     margin-top: 56px;
+    display: grid;
+    grid-template-columns: minmax(190px, 1.5fr) repeat(4, 1fr);
+    align-items: center;
+    gap: 32px 48px;
     position: relative;
     z-index: 2;
   }
 
-  .stat { text-align: center; padding: 0 12px; }
+  .stat-lead h3 { font-size: 1.5rem; margin-bottom: 8px; }
+
+  .stat-lead p {
+    color: var(--muted);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    max-width: 26ch;
+  }
 
   .stat strong {
     display: block;
     font-family: 'Playfair Display', serif;
-    font-size: 2.7rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    color: var(--ink);
+    color: var(--accent);
     line-height: 1;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
-  .stat span { font-size: 0.9rem; color: var(--muted); }
+  .stat span { font-size: 0.82rem; color: var(--muted); }
+
+  /* ---------- GALERIJA ---------- */
+  .gal-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .gal-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--r-card);
+    background: var(--cream-2);
+    aspect-ratio: 4 / 3;
+  }
+
+  .gal-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .gal-item:hover img { transform: scale(1.05); }
+
+  .gal-cap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 26px 18px 14px;
+    background: linear-gradient(to top, rgba(28, 19, 15, 0.72), rgba(28, 19, 15, 0));
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .gal-note { text-align: center; margin-top: 40px; }
+  .gal-note p { color: var(--muted); font-size: 0.9rem; margin-bottom: 18px; }
 
   /* ---------- TESTIMONIALS ---------- */
   .testi { background: var(--cream); }
@@ -880,51 +932,98 @@
   .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--tan); }
   .dot.on { background: var(--accent); width: 22px; border-radius: 4px; }
 
-  /* ---------- NEWS ---------- */
-  .news-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-
-  .news-card {
-    background: #fff;
-    border: 1px solid var(--line-soft);
-    border-radius: var(--r-card);
-    overflow: hidden;
+  /* ---------- QA / SAVETI-FAQ ---------- */
+  .qa-list {
+    max-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-direction: column;
+    gap: 12px;
   }
 
-  .news-card .body { padding: 32px 28px 32px; }
-
-  .news-num {
-    display: block;
-    font-family: 'Playfair Display', serif;
-    font-size: 2.6rem;
-    font-weight: 600;
-    line-height: 1;
-    color: var(--tan);
-    margin-bottom: 20px;
+  .qa-item {
+    background: var(--ink);
+    border: 1px solid transparent;
+    border-radius: 18px;
+    transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   }
 
-  .news-meta {
+  .qa-item.open {
+    background: #fff;
+    border-color: var(--tan);
+    box-shadow: 0 12px 32px rgba(44, 30, 23, 0.07);
+  }
+
+  .qa-q {
+    width: 100%;
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 12px;
+    gap: 18px;
+    background: none;
+    border: 0;
+    padding: 20px 22px;
+    text-align: left;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: rgba(247, 241, 232, 0.92);
   }
 
-  .news-meta i { font-style: normal; color: var(--tan); }
-  .news-card h3 { font-size: 1.15rem; line-height: 1.35; margin-bottom: 10px; }
-  .news-card p { font-size: 0.9rem; color: var(--muted); }
+  .qa-item.open .qa-q { color: var(--ink); font-weight: 700; }
 
-  .news-cta { text-align: center; margin-top: 48px; }
+  .qa-num {
+    flex: 0 0 auto;
+    width: 14px;
+    font-size: 0.8rem;
+    color: rgba(247, 241, 232, 0.42);
+  }
+
+  .qa-item.open .qa-num { color: var(--muted); }
+
+  .qa-text { flex: 1; }
+
+  .qa-sign {
+    flex: 0 0 auto;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #fff;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+  }
+
+  .qa-item.open .qa-sign {
+    background: var(--ink);
+    color: #fff;
+    transform: rotate(45deg);
+  }
+
+  .qa-a { max-height: 0; overflow: hidden; transition: max-height 0.25s ease; }
+
+  .qa-a-inner { padding: 0 22px 24px 54px; }
+
+  .qa-a p { color: var(--muted); font-size: 0.9rem; max-width: 62ch; }
+  .qa-a p + p { margin-top: 12px; }
+
+  .qa-foot { text-align: center; margin-top: 44px; }
+  .qa-foot p { color: var(--muted); font-size: 0.9rem; margin-bottom: 8px; }
+
+  .qa-foot a {
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--tan);
+  }
+
+  .qa-foot a:hover { text-decoration-color: var(--accent); color: var(--accent); }
 
   /* ---------- FAQ ---------- */
   .faq-list {
@@ -1070,6 +1169,14 @@
     .testi-grid { gap: 36px; }
   }
 
+  /* uzi laptopi: skupi nav i skloni telefonski blok da meni stane u jedan red */
+  @media (max-width: 1199px) {
+    .header .wrap { gap: 16px; }
+    .nav { gap: 18px; }
+    .nav a { font-size: 0.85rem; }
+    .header-phone { display: none; }
+  }
+
   @media (max-width: 991px) {
     .nav, .header-actions { display: none; }
     .hamburger { display: flex; }
@@ -1083,8 +1190,10 @@
     .feat:nth-child(4) { border-left: none; }
     .feat { border-top: 1px solid var(--line); }
     .feat:nth-child(-n+3) { border-top: none; }
-    .trust-grid, .news-grid { grid-template-columns: 1fr 1fr; }
-    .trust-grid > :last-child, .news-grid > :last-child { grid-column: 1 / -1; }
+    .trust-grid { grid-template-columns: 1fr 1fr; }
+    .gal-grid { grid-template-columns: repeat(3, 1fr); }
+    .stat-row { grid-template-columns: 1fr 1fr; padding: 30px 32px; }
+    .trust-grid > :last-child { grid-column: 1 / -1; }
     .testi-grid { grid-template-columns: 1fr; }
     .testi-media { height: 380px; }
     .testi-text { min-height: 0; }
@@ -1102,18 +1211,20 @@
     .hero-media > img { height: 320px; }
     .hero-cards { flex-direction: column; }
     .hero-head .btn-row .btn, .hero-head .btn-row .btn-ghost { width: 100%; }
-    .cat-grid, .trust-grid, .news-grid { grid-template-columns: 1fr; }
+    .cat-grid, .trust-grid { grid-template-columns: 1fr; }
+    .gal-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
     .plan-top { flex-direction: column-reverse; align-items: flex-start; gap: 12px; min-height: 0; }
     .plan-wide { grid-template-columns: 1fr; }
     .plan-wide-buy { flex-direction: column; align-items: flex-start; gap: 18px; }
-    .trust-grid > :last-child, .news-grid > :last-child { grid-column: auto; }
+    .trust-grid > :last-child { grid-column: auto; }
     .feat-row { grid-template-columns: repeat(2, 1fr); }
     .feat { border-top: 1px solid var(--line); }
     .feat:nth-child(-n+2) { border-top: none; }
     .feat:nth-child(odd) { border-left: none; }
     .feat:nth-child(5) { grid-column: 1 / -1; }
     .banner { min-height: 320px; }
-    .stat-row { grid-template-columns: 1fr; gap: 32px; }
+    .stat-row { grid-template-columns: 1fr 1fr; padding: 28px; gap: 28px 24px; }
+    .stat-lead { grid-column: 1 / -1; }
     .footer-grid { grid-template-columns: 1fr; gap: 36px; }
     .footer-top { padding-top: 72px; padding-bottom: 48px; }
     .footer-bottom { flex-direction: column; text-align: center; }
@@ -1158,6 +1269,7 @@
 
     <nav class="nav">
       <a href="#usluge">Šta radimo</a>
+      <a href="#galerija">Galerija</a>
       <a href="#u-ceni">U ceni</a>
       <a href="#o-nama">O nama</a>
       <a href="#utisci">Utisci</a>
@@ -1187,6 +1299,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <div class="wrap">
       <a href="#usluge">Šta radimo</a>
+      <a href="#galerija">Galerija</a>
       <a href="#u-ceni">U ceni</a>
       <a href="#o-nama">O nama</a>
       <a href="#utisci">Utisci</a>
@@ -1337,6 +1450,60 @@
   </div>
 </section>
 
+<!-- ================= GALERIJA ================= -->
+<section class="section section-cream" id="galerija">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="chip">Galerija</span>
+      <h2>Psi, štenci i dvorište</h2>
+      <p class="lead">Slike iz uzgoja i iz pansiona. Ovo je dvorište u koje dolazite kad birate štene.</p>
+    </div>
+
+    <div class="gal-grid">
+      <figure class="gal-item">
+        <img src="assets/prodaja-labradora-promo-2.jpg" alt="Šest žutih štenaca labradora naslonjenih na ivicu boksa u dvorištu">
+        <figcaption class="gal-cap">Leglo u dvorištu</figcaption>
+      </figure>
+
+      <figure class="gal-item">
+        <img src="assets/blue-king-aris.jpg" alt="Žuti labrador retriver Aris sedi na travi u dvorištu odgajivačnice">
+        <figcaption class="gal-cap">Aris, otac legla</figcaption>
+      </figure>
+
+      <figure class="gal-item">
+        <img src="assets/georgeSidebar.jpg" alt="Odrasli žuti labrador George stoji na travi u stavu za ocenjivanje">
+        <figcaption class="gal-cap">George u stavu</figcaption>
+      </figure>
+
+      <figure class="gal-item">
+        <img src="assets/pansion_za_pse_258.jpg" alt="Natkriveni boksovi pansiona za pse sa mrežastim vratima i crnim psom">
+        <figcaption class="gal-cap">Boksovi pansiona</figcaption>
+      </figure>
+
+      <figure class="gal-item">
+        <img src="assets/galerija-1.jpg" alt="" data-optional>
+      </figure>
+
+      <figure class="gal-item">
+        <img src="assets/galerija-2.jpg" alt="" data-optional>
+      </figure>
+
+      <figure class="gal-item">
+        <img src="assets/galerija-3.jpg" alt="" data-optional>
+      </figure>
+
+      <figure class="gal-item">
+        <img src="assets/galerija-4.jpg" alt="" data-optional>
+      </figure>
+    </div>
+
+    <div class="gal-note">
+      <p>Više slika šaljem na Viber, kao i snimke legla dok štenci rastu.</p>
+      <a href="tel:+381631234567" class="btn">Pozovite 063 123 4567</a>
+    </div>
+  </div>
+</section>
+
 <!-- ================= CENOVNIK ================= -->
 <section class="section plans" id="u-ceni">
   <div class="wrap">
@@ -1481,17 +1648,25 @@
     </div>
 
     <div class="stat-row">
+      <div class="stat-lead">
+        <h3>Brojke</h3>
+        <p>Petnaest godina istog posla, u istom dvorištu.</p>
+      </div>
       <div class="stat">
         <strong>15+</strong>
-        <span>godina uzgoja labradora u Jakovu</span>
+        <span>godina uzgoja</span>
       </div>
       <div class="stat">
         <strong>8</strong>
-        <span>nedelja štene ostaje sa majkom i leglom</span>
+        <span>nedelja sa leglom</span>
       </div>
       <div class="stat">
         <strong>100%</strong>
-        <span>štenaca odlazi sa rodovnikom i mikročipom</span>
+        <span>sa rodovnikom</span>
+      </div>
+      <div class="stat">
+        <strong>365</strong>
+        <span>dana radi pansion</span>
       </div>
     </div>
   </div>
@@ -1534,46 +1709,89 @@
   </div>
 </section>
 
-<!-- ================= SAVETI ================= -->
+<!-- ================= SAVETI / FAQ ================= -->
 <section class="section section-page" id="saveti">
   <div class="wrap">
     <div class="sec-head">
-      <span class="chip">Saveti</span>
+      <span class="chip">FAQ</span>
       <h2>Ono što najčešće pitate</h2>
-      <p class="lead">Tri stvari koje ponovim skoro svakom vlasniku. Ako vam nešto ovde fali, pitajte telefonom.</p>
     </div>
 
-    <div class="news-grid">
-      <article class="news-card">
-        <div class="body">
-          <span class="news-num">01</span>
-          <div class="news-meta">Ishrana <i>—</i> prvi meseci</div>
-          <h3>Kako se hrani štene u prvim nedeljama kod kuće</h3>
-          <p>Prvih desetak dana ostanite na hrani na koju je štene naviklo, pa tek onda menjajte. Nagla promena znači proliv i nepotrebnu vožnju kod veterinara.</p>
+    <div class="qa-list">
+      <div class="qa-item">
+        <button class="qa-q" type="button" aria-expanded="false" aria-controls="qa-a-1">
+          <span class="qa-num">1</span>
+          <span class="qa-text">Kako da hranim štene prvih nedelja kod kuće?</span>
+          <span class="qa-sign"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="qa-a" id="qa-a-1">
+          <div class="qa-a-inner">
+            <p>Prvih desetak dana ostanite na hrani na koju je štene naviklo, pa tek onda menjajte. Nagla promena znači proliv i nepotrebnu vožnju kod veterinara.</p>
+            <p>Kad krenete da menjate, radite to postepeno kroz nedelju dana, mešajući staru i novu hranu u sve drugačijem odnosu.</p>
+          </div>
         </div>
-      </article>
+      </div>
 
-      <article class="news-card">
-        <div class="body">
-          <span class="news-num">02</span>
-          <div class="news-meta">Navike <i>—</i> prva noć</div>
-          <h3>Prva noć u novom domu prođe lakše nego što mislite</h3>
-          <p>Ležaj postavite blizu sebe, bez uzimanja u krevet. Štene koje je odraslo među ljudima traži prisustvo, ne krevet, i za par noći se smiri.</p>
+      <div class="qa-item">
+        <button class="qa-q" type="button" aria-expanded="false" aria-controls="qa-a-2">
+          <span class="qa-num">2</span>
+          <span class="qa-text">Kako proći prvu noć u novom domu?</span>
+          <span class="qa-sign"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="qa-a" id="qa-a-2">
+          <div class="qa-a-inner">
+            <p>Ležaj postavite blizu sebe, ali bez uzimanja u krevet. Štene koje je odraslo među ljudima traži prisustvo, ne krevet, i za par noći se smiri.</p>
+            <p>Ako cvili, sačekajte da se stiša pa ga tek onda pomazite. Odlazak kod njega na svaki glas nauči ga da cviljenjem doziva.</p>
+          </div>
         </div>
-      </article>
+      </div>
 
-      <article class="news-card">
-        <div class="body">
-          <span class="news-num">03</span>
-          <div class="news-meta">Pansion <i>—</i> priprema</div>
-          <h3>Šta poneti kad pas ostaje u pansionu</h3>
-          <p>Njegova hrana, raspored obroka i podaci veterinara. Ako pas pije terapiju, donesite je u originalnom pakovanju i napišite doze.</p>
+      <div class="qa-item">
+        <button class="qa-q" type="button" aria-expanded="false" aria-controls="qa-a-3">
+          <span class="qa-num">3</span>
+          <span class="qa-text">Šta da ponesem kad pas ostaje u pansionu?</span>
+          <span class="qa-sign"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="qa-a" id="qa-a-3">
+          <div class="qa-a-inner">
+            <p>Njegovu hranu, raspored obroka i podatke vašeg veterinara. Ako pas pije terapiju, donesite je u originalnom pakovanju i napišite doze.</p>
+            <p>Ćebe ili igračka iz kuće nisu obavezni, ali psu koji prvi put ostaje pomažu da se brže smiri.</p>
+          </div>
         </div>
-      </article>
+      </div>
+
+      <div class="qa-item">
+        <button class="qa-q" type="button" aria-expanded="false" aria-controls="qa-a-4">
+          <span class="qa-num">4</span>
+          <span class="qa-text">Kada štene ide kod veterinara posle preuzimanja?</span>
+          <span class="qa-sign"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="qa-a" id="qa-a-4">
+          <div class="qa-a-inner">
+            <p>Prvu vakcinu i pregled štene dobija kod mene, pre nego što ode. Sledeći termin je revakcinacija, otprilike tri nedelje kasnije.</p>
+            <p>Tačan datum vam napišem uz papire, a ako propustite rok, zovite me pre nego što sami menjate raspored.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <button class="qa-q" type="button" aria-expanded="false" aria-controls="qa-a-5">
+          <span class="qa-num">5</span>
+          <span class="qa-text">Koliko štene sme da ostane samo u kući?</span>
+          <span class="qa-sign"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="qa-a" id="qa-a-5">
+          <div class="qa-a-inner">
+            <p>U početku kratko, pa sve duže. Krenite od petnaest minuta i produžavajte tokom nedelja, umesto da odmah ostavite štene na pola dana.</p>
+            <p>Odlazak i povratak neka budu bez pozdravljanja i uzbuđenja. Tako štene nauči da vaš izlazak nije događaj.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="news-cta">
-      <a href="tel:+381631234567" class="btn">Pitajte za savet — 063 123 4567</a>
+    <div class="qa-foot">
+      <p>Imate još neko pitanje?</p>
+      <a href="#kontakt">Javite se</a>
     </div>
   </div>
 </section>
@@ -1664,6 +1882,7 @@
         <h4>Stranica</h4>
         <ul class="footer-links">
           <li><a href="#usluge">Šta radimo</a></li>
+          <li><a href="#galerija">Galerija</a></li>
           <li><a href="#u-ceni">U ceni</a></li>
           <li><a href="#o-nama">O nama</a></li>
           <li><a href="#utisci">Utisci</a></li>
@@ -1791,8 +2010,43 @@
       });
     });
 
+    // ---- galerija: ukloni mesta za koja slika jos ne postoji ----
+    document.querySelectorAll('.gal-item img[data-optional]').forEach(function (img) {
+      function drop() {
+        var tile = img.closest('.gal-item');
+        if (tile) tile.remove();
+      }
+      if (img.complete && img.naturalWidth === 0) { drop(); } else { img.addEventListener('error', drop); }
+    });
+
+    // ---- QA akordeon (sekcija Saveti) ----
+    var qaItems = document.querySelectorAll('.qa-item');
+
+    function setQaHeight(item) {
+      var body = item.querySelector('.qa-a');
+      body.style.maxHeight = item.classList.contains('open') ? body.scrollHeight + 'px' : '0px';
+    }
+
+    qaItems.forEach(function (item) {
+      setQaHeight(item);
+      item.querySelector('.qa-q').addEventListener('click', function () {
+        var willOpen = !item.classList.contains('open');
+        qaItems.forEach(function (other) {
+          other.classList.remove('open');
+          other.querySelector('.qa-q').setAttribute('aria-expanded', 'false');
+          setQaHeight(other);
+        });
+        if (willOpen) {
+          item.classList.add('open');
+          this.setAttribute('aria-expanded', 'true');
+          setQaHeight(item);
+        }
+      });
+    });
+
     window.addEventListener('resize', function () {
       faqItems.forEach(setHeight);
+      qaItems.forEach(setQaHeight);
     });
   })();
 </script>
