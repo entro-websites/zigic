@@ -17,6 +17,7 @@
     --tan: #e4d7c3;
     --ink: #2c1e17;
     --ink-2: #3b291f;
+    --ink-deep: #1b1310;
     --text: #33261f;
     --muted: #7b6a5e;
     --accent: #c04a2b;
@@ -142,20 +143,6 @@
   .btn-ghost:hover { border-color: var(--ink); background: rgba(44, 30, 23, 0.04); }
 
   .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
-
-  .ghost {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: clamp(5rem, 15vw, 13rem);
-    line-height: 0.82;
-    letter-spacing: -0.04em;
-    color: rgba(44, 30, 23, 0.07);
-    user-select: none;
-    pointer-events: none;
-    white-space: nowrap;
-    position: absolute;
-    z-index: 0;
-  }
 
   /* ---------- TOPBAR ---------- */
   .topbar {
@@ -337,8 +324,6 @@
   }
 
   .hero .wrap { position: relative; }
-
-  .ghost-hero { top: -18px; left: 50%; transform: translateX(-50%); }
 
   .hero-head { position: relative; z-index: 2; text-align: center; max-width: 760px; margin-left: auto; margin-right: auto; }
 
@@ -539,69 +524,205 @@
   .banner-body h3 { color: #fff; font-size: clamp(1.5rem, 2.4vw, 2rem); margin-bottom: 10px; }
   .banner-body p { color: rgba(255, 255, 255, 0.82); font-size: 0.92rem; margin-bottom: 18px; }
 
-  /* ---------- INCLUDED GRID ---------- */
-  .inc-grid {
+  /* ---------- PLANS / CENOVNIK ---------- */
+  .plans { background: var(--ink); }
+
+  .plans-head {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 40px;
+    margin-bottom: 56px;
+  }
+
+  .plans-head h2 {
+    color: #fff;
+    font-size: clamp(2.6rem, 6vw, 4.6rem);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .plans-head p {
+    color: rgba(247, 241, 232, 0.62);
+    font-size: 0.95rem;
+    max-width: 34ch;
+    text-align: right;
+  }
+
+  .plan-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
 
-  .inc-card {
+  .plan {
     background: #fff;
-    border: 1px solid var(--line-soft);
-    border-radius: var(--r-card);
-    padding: 26px 24px 22px;
+    border-radius: var(--r-big);
+    padding: 26px 26px 28px;
     display: flex;
     flex-direction: column;
+    position: relative;
   }
 
-  .inc-card .ico {
-    width: 58px;
-    height: 58px;
-    border-radius: 12px;
-    background: var(--cream);
+  .plan-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 34px;
+    margin-bottom: 10px;
+  }
+
+  .plan-top h3 {
     color: var(--accent);
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+
+  .plan-badge {
+    flex: 0 0 auto;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  .plan-sub {
+    color: var(--muted);
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .plan-price {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-top: 22px;
+    margin-bottom: 24px;
+  }
+
+  .plan-price strong {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.4vw, 2.7rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .plan-price span { font-size: 0.85rem; color: var(--muted); }
+
+  .plan-feats {
+    border-top: 1px solid var(--line-soft);
+    padding-top: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 26px;
+  }
+
+  .plan-feats li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  .tick {
+    flex: 0 0 auto;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
   }
 
-  .inc-card small {
-    display: block;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 8px;
-  }
+  .plan-feats .tick { margin-top: 2px; }
 
-  .inc-card h3 { font-size: 1.05rem; line-height: 1.35; margin-bottom: 16px; }
-
-  .inc-foot {
+  .plan-btn {
+    align-self: flex-start;
     margin-top: auto;
-    padding-top: 16px;
-    border-top: 1px solid var(--line-soft);
+    background: var(--cream);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 12px 26px;
+    font-weight: 700;
+    font-size: 0.86rem;
+    line-height: 1.2;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  .plan-btn:hover { background: var(--cream-2); border-color: var(--tan); }
+
+  /* ---- siroka tamna kartica ---- */
+  .plan-wide {
+    background: var(--ink-deep);
+    border-radius: var(--r-big);
+    padding: 30px 32px;
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 28px 40px;
+  }
+
+  .plan-wide h3 { color: var(--accent); font-size: 1.2rem; margin-bottom: 6px; }
+
+  .plan-wide > div > p {
+    color: rgba(247, 241, 232, 0.55);
+    font-size: 0.85rem;
+    max-width: 46ch;
+  }
+
+  .plan-wide-buy {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 26px;
+  }
+
+  .plan-wide .plan-price { margin: 0; }
+  .plan-wide .plan-price strong { color: #fff; }
+  .plan-wide .plan-price span { color: rgba(247, 241, 232, 0.55); }
+
+  .plan-wide .plan-btn {
+    margin-top: 0;
+    background: var(--cream);
+    border-color: var(--cream);
+  }
+
+  .plan-wide .plan-btn:hover { background: #fff; border-color: #fff; }
+
+  .plan-wide-feats {
+    grid-column: 1 / -1;
+    border-top: 1px solid var(--line-dark);
+    padding-top: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 32px;
+  }
+
+  .plan-wide-feats li {
+    display: flex;
+    align-items: center;
     gap: 10px;
+    font-size: 0.88rem;
+    color: rgba(247, 241, 232, 0.82);
   }
 
-  .inc-foot b { font-size: 0.95rem; font-weight: 700; color: var(--accent); }
-  .inc-foot em { font-style: normal; font-size: 0.78rem; color: var(--muted); }
-
-  .inc-note {
-    margin-top: 40px;
-    text-align: center;
-  }
-
-  .inc-note p { color: var(--muted); max-width: 62ch; margin: 0 auto 22px; }
 
   /* ---------- TRUSTED / ABOUT ---------- */
   .trusted { position: relative; overflow: hidden; }
-  .ghost-trusted { bottom: 30px; left: 50%; transform: translateX(-50%); color: rgba(44, 30, 23, 0.055); }
 
   .trust-grid {
     display: grid;
@@ -953,7 +1074,10 @@
     .nav, .header-actions { display: none; }
     .hamburger { display: flex; }
     .section { padding-top: 88px; padding-bottom: 88px; }
-    .cat-grid, .inc-grid { grid-template-columns: repeat(2, 1fr); }
+    .cat-grid { grid-template-columns: repeat(2, 1fr); }
+    .plan-grid { grid-template-columns: 1fr; }
+    .plans-head { grid-template-columns: 1fr; align-items: start; }
+    .plans-head p { text-align: left; }
     .banner-grid { grid-template-columns: 1fr; }
     .feat-row { grid-template-columns: repeat(3, 1fr); }
     .feat:nth-child(4) { border-left: none; }
@@ -978,7 +1102,10 @@
     .hero-media > img { height: 320px; }
     .hero-cards { flex-direction: column; }
     .hero-head .btn-row .btn, .hero-head .btn-row .btn-ghost { width: 100%; }
-    .cat-grid, .inc-grid, .trust-grid, .news-grid { grid-template-columns: 1fr; }
+    .cat-grid, .trust-grid, .news-grid { grid-template-columns: 1fr; }
+    .plan-top { flex-direction: column-reverse; align-items: flex-start; gap: 12px; min-height: 0; }
+    .plan-wide { grid-template-columns: 1fr; }
+    .plan-wide-buy { flex-direction: column; align-items: flex-start; gap: 18px; }
     .trust-grid > :last-child, .news-grid > :last-child { grid-column: auto; }
     .feat-row { grid-template-columns: repeat(2, 1fr); }
     .feat { border-top: 1px solid var(--line); }
@@ -1074,8 +1201,6 @@
 <!-- ================= HERO ================= -->
 <section class="hero">
   <div class="wrap">
-    <span class="ghost ghost-hero" aria-hidden="true">labrador</span>
-
     <div class="hero-head">
       <span class="chip">Odgajivačnica od 2010.</span>
       <h1>Labradori engleskih linija, odgajani u dvorištu u Jakovu</h1>
@@ -1212,101 +1337,114 @@
   </div>
 </section>
 
-<!-- ================= U CENI ================= -->
-<section class="section section-cream" id="u-ceni">
+<!-- ================= CENOVNIK ================= -->
+<section class="section plans" id="u-ceni">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="chip">Cenovnik</span>
-      <h2>Šta ulazi u cenu</h2>
-      <p class="lead">Sve što je dole napisano dobijate bez doplate. Ono što se ne može unapred napisati, cena legla i boravka, kažem vam telefonom odmah.</p>
+    <div class="plans-head">
+      <h2>Cenovnik</h2>
+      <p>Izaberite boravak koji vam odgovara. Cenu kažem telefonom odmah, bez dolaska i bez čekanja ponude.</p>
     </div>
 
-    <div class="inc-grid">
-      <article class="inc-card">
-        <span class="ico">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4l-7.5 7.5"/><path d="M14.5 3.5l6 6"/><path d="M12.5 9.5l2 2"/><path d="M11.5 10.5L4 18v2h2l7.5-7.5z"/></svg>
-        </span>
-        <small>Uz svako štene</small>
-        <h3>Prva vakcina i revakcinacija</h3>
-        <div class="inc-foot"><b>uključeno</b><em>pre preuzimanja</em></div>
-      </article>
+    <div class="plan-grid">
+      <article class="plan">
+      <div class="plan-top">
+        <h3>Dnevni boravak</h3>
+      </div>
+      <p class="plan-sub">Bez minimalnog broja dana</p>
+      <p class="plan-sub">Dogovor i dan ranije</p>
 
-      <article class="inc-card">
-        <span class="ico">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 4v3M14 4v3M10 17v3M14 17v3M4 10h3M4 14h3M17 10h3M17 14h3"/></svg>
-        </span>
-        <small>Uz svako štene</small>
-        <h3>Mikročip i pasoš</h3>
-        <div class="inc-foot"><b>uključeno</b><em>na dan preuzimanja</em></div>
-      </article>
+      <div class="plan-price">
+        <strong>na upit</strong>
+        <span>/ dan</span>
+      </div>
 
-      <article class="inc-card">
-        <span class="ico">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>
-        </span>
-        <small>Uz svako štene</small>
-        <h3>Rodovnik i podaci o roditeljima</h3>
-        <div class="inc-foot"><b>uključeno</b><em>na uvid unapred</em></div>
-      </article>
+      <ul class="plan-feats">
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg></span>Natkriven boks i dvorište</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg></span>Hranjenje po vašem rasporedu</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg></span>Izlazak i kretanje van boksa</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg></span>Vaša hrana ako želite</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg></span>Javim vam kako je pas prošao dan</li>
+      </ul>
 
-      <article class="inc-card">
-        <span class="ico">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.2-2.9 7.8-7 9-4.1-1.2-7-4.8-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
-        </span>
-        <small>Uz svako štene</small>
-        <h3>Pregled veterinara pre preuzimanja</h3>
-        <div class="inc-foot"><b>uključeno</b><em>nalaz dobijate uz psa</em></div>
-      </article>
+      <a href="tel:+381631234567" class="plan-btn">Pitajte za cenu</a>
+    </article>
 
-      <article class="inc-card">
-        <span class="ico">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9.5 20v-5.5h5V20"/></svg>
-        </span>
-        <small>Pansion za pse</small>
-        <h3>Natkriven boks i dvorište</h3>
-        <div class="inc-foot"><b>svaki dan</b><em>hlad leti</em></div>
-      </article>
+      <article class="plan">
+      <div class="plan-top">
+        <h3>Nedeljni boravak</h3>
+        <span class="plan-badge">Povoljnije od 7 dana</span>
+      </div>
+      <p class="plan-sub">Za put i godišnji odmor</p>
+      <p class="plan-sub">Mesto se rezerviše unapred</p>
 
-      <article class="inc-card">
-        <span class="ico">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 11h17"/><path d="M5 11a7 7 0 0014 0"/><path d="M9 7.5c0-1.4 1.4-1.9 1.4-3.2"/><path d="M13.5 7.5c0-1.4 1.4-1.9 1.4-3.2"/></svg>
-        </span>
-        <small>Pansion za pse</small>
-        <h3>Hranjenje po vašem rasporedu</h3>
-        <div class="inc-foot"><b>2—3 puta</b><em>vaša hrana ako želite</em></div>
-      </article>
+      <div class="plan-price">
+        <strong>na upit</strong>
+        <span>/ 7 dana</span>
+      </div>
 
-      <article class="inc-card">
-        <span class="ico">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="17.5" cy="6" r="2"/><path d="M15.6 7.4L11 12"/><path d="M11 12a4 4 0 01-4 4H6a2.5 2.5 0 000 5h1"/><circle cx="6" cy="19" r="2"/></svg>
-        </span>
-        <small>Pansion za pse</small>
-        <h3>Izlazak i kretanje van boksa</h3>
-        <div class="inc-foot"><b>svaki dan</b><em>ne stoji zatvoren</em></div>
-      </article>
+      <ul class="plan-feats">
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg></span>Sve iz dnevnog boravka</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg></span>Slike psa tokom boravka</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg></span>Kupanje pred odlazak kući</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg></span>Terapija po vašem uputstvu</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg></span>Isti boks celo vreme</li>
+      </ul>
 
-      <article class="inc-card">
-        <span class="ico">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0l-7-7A2 2 0 013 12.2V5a2 2 0 012-2h7.2a2 2 0 011.4.6l7 7a2 2 0 010 2.8z"/><circle cx="7.6" cy="7.6" r="1.3"/></svg>
-        </span>
-        <small>Cena</small>
-        <h3>Cena legla i boravka</h3>
-        <div class="inc-foot"><b>na upit</b><em>odgovor isti dan</em></div>
-      </article>
+      <a href="tel:+381631234567" class="plan-btn">Pitajte za cenu</a>
+    </article>
+
+      <article class="plan">
+      <div class="plan-top">
+        <h3>Mesečni boravak</h3>
+        <span class="plan-badge">Povoljnije od 30 dana</span>
+      </div>
+      <p class="plan-sub">Za duži put i selidbu</p>
+      <p class="plan-sub">Mesto se rezerviše unapred</p>
+
+      <div class="plan-price">
+        <strong>na upit</strong>
+        <span>/ 30 dana</span>
+      </div>
+
+      <ul class="plan-feats">
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg></span>Sve iz nedeljnog boravka</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg></span>Redovno javljanje svake nedelje</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg></span>Odlazak kod veterinara ako zatreba</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg></span>Rad na osnovnim komandama</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg></span>Dogovor oko produžetka bez naknade</li>
+      </ul>
+
+      <a href="tel:+381631234567" class="plan-btn">Pitajte za cenu</a>
+    </article>
     </div>
 
-    <div class="inc-note">
-      <p>Cena zavisi od legla i od toga koliko pas ostaje u pansionu. Zovite i reći ću vam brojku odmah, bez dolaska i bez čekanja ponude.</p>
-      <a href="tel:+381631234567" class="btn">Pozovite 063 123 4567</a>
-    </div>
+    <article class="plan-wide">
+      <div>
+        <h3>Štene labradora</h3>
+        <p>Iz legla planiranog unapred. Roditelje i papire vidite pre nego što se odlučite.</p>
+      </div>
+
+      <div class="plan-wide-buy">
+        <div class="plan-price">
+          <strong>na upit</strong>
+          <span>/ štene</span>
+        </div>
+        <a href="tel:+381631234567" class="plan-btn">Pitajte za štence</a>
+      </div>
+
+      <ul class="plan-wide-feats">
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg></span>Rodovnik</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg></span>Mikročip i pasoš</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg></span>Prva vakcina i revakcinacija</li>
+        <li><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg></span>Pregled veterinara pre preuzimanja</li>
+      </ul>
+    </article>
   </div>
 </section>
 
 <!-- ================= O NAMA ================= -->
 <section class="section section-page trusted" id="o-nama">
   <div class="wrap">
-    <span class="ghost ghost-trusted" aria-hidden="true">av av</span>
-
     <div class="sec-head">
       <span class="chip">O nama</span>
       <h2>Vlasnici koji su birali pažljivo<br>biraju ovaj uzgoj</h2>
