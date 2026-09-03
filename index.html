@@ -435,6 +435,36 @@
   .cat-card h3 { font-size: 1.15rem; margin-bottom: 8px; }
   .cat-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
 
+  /* izdvojena kategorija (pansion) */
+  .cat-card-feature {
+    position: relative;
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+
+  .cat-card-feature:hover { border-color: var(--accent); }
+  .cat-card-feature .ico { background: var(--accent); color: #fff; }
+  .cat-card-feature h3 { color: #fff; }
+  .cat-card-feature p { color: rgba(247, 241, 232, 0.72); }
+  .cat-card-feature .btn { margin-top: 20px; }
+
+  .cat-badge {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+
+  .cat-card-feature { padding-top: 48px; }
+
   /* ---------- FEATURE ROW ---------- */
   .feat-row {
     display: grid;
@@ -1452,12 +1482,14 @@
         <p>Aris i George su iz engleskih linija. Pregled kukova i laktova, miran temperament, papiri koje možete da vidite.</p>
       </article>
 
-      <article class="cat-card">
+      <article class="cat-card cat-card-feature">
+        <span class="cat-badge">Izdvojeno</span>
         <span class="ico">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9.5 20v-5.5h5V20"/></svg>
         </span>
         <h3>Pansion za pse</h3>
         <p>Natkriveni boksovi, prostor za kretanje i hlad leti. Pse izvodim svaki dan, ne stoje zatvoreni u boksu.</p>
+        <a href="#pansion" class="btn btn-sm">Više o pansionu</a>
       </article>
 
       <article class="cat-card">
@@ -1787,93 +1819,6 @@
           <span class="dots" id="testiDots" aria-hidden="true"></span>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= SAVETI / FAQ ================= -->
-<section class="section section-page" id="saveti">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="chip">FAQ</span>
-      <h2>Ono što najčešće pitate</h2>
-    </div>
-
-    <div class="qa-list">
-      <div class="qa-item">
-        <button class="qa-q" type="button" aria-expanded="false" aria-controls="qa-a-1">
-          <span class="qa-num">1</span>
-          <span class="qa-text">Kako da hranim štene prvih nedelja kod kuće?</span>
-          <span class="qa-sign"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
-        </button>
-        <div class="qa-a" id="qa-a-1">
-          <div class="qa-a-inner">
-            <p>Prvih desetak dana ostanite na hrani na koju je štene naviklo, pa tek onda menjajte. Nagla promena znači proliv i nepotrebnu vožnju kod veterinara.</p>
-            <p>Kad krenete da menjate, radite to postepeno kroz nedelju dana, mešajući staru i novu hranu u sve drugačijem odnosu.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="qa-item">
-        <button class="qa-q" type="button" aria-expanded="false" aria-controls="qa-a-2">
-          <span class="qa-num">2</span>
-          <span class="qa-text">Kako proći prvu noć u novom domu?</span>
-          <span class="qa-sign"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
-        </button>
-        <div class="qa-a" id="qa-a-2">
-          <div class="qa-a-inner">
-            <p>Ležaj postavite blizu sebe, ali bez uzimanja u krevet. Štene koje je odraslo među ljudima traži prisustvo, ne krevet, i za par noći se smiri.</p>
-            <p>Ako cvili, sačekajte da se stiša pa ga tek onda pomazite. Odlazak kod njega na svaki glas nauči ga da cviljenjem doziva.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="qa-item">
-        <button class="qa-q" type="button" aria-expanded="false" aria-controls="qa-a-3">
-          <span class="qa-num">3</span>
-          <span class="qa-text">Šta da ponesem kad pas ostaje u pansionu?</span>
-          <span class="qa-sign"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
-        </button>
-        <div class="qa-a" id="qa-a-3">
-          <div class="qa-a-inner">
-            <p>Njegovu hranu, raspored obroka i podatke vašeg veterinara. Ako pas pije terapiju, donesite je u originalnom pakovanju i napišite doze.</p>
-            <p>Ćebe ili igračka iz kuće nisu obavezni, ali psu koji prvi put ostaje pomažu da se brže smiri.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="qa-item">
-        <button class="qa-q" type="button" aria-expanded="false" aria-controls="qa-a-4">
-          <span class="qa-num">4</span>
-          <span class="qa-text">Kada štene ide kod veterinara posle preuzimanja?</span>
-          <span class="qa-sign"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
-        </button>
-        <div class="qa-a" id="qa-a-4">
-          <div class="qa-a-inner">
-            <p>Prvu vakcinu i pregled štene dobija kod mene, pre nego što ode. Sledeći termin je revakcinacija, otprilike tri nedelje kasnije.</p>
-            <p>Tačan datum vam napišem uz papire, a ako propustite rok, zovite me pre nego što sami menjate raspored.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="qa-item">
-        <button class="qa-q" type="button" aria-expanded="false" aria-controls="qa-a-5">
-          <span class="qa-num">5</span>
-          <span class="qa-text">Koliko štene sme da ostane samo u kući?</span>
-          <span class="qa-sign"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
-        </button>
-        <div class="qa-a" id="qa-a-5">
-          <div class="qa-a-inner">
-            <p>U početku kratko, pa sve duže. Krenite od petnaest minuta i produžavajte tokom nedelja, umesto da odmah ostavite štene na pola dana.</p>
-            <p>Odlazak i povratak neka budu bez pozdravljanja i uzbuđenja. Tako štene nauči da vaš izlazak nije događaj.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="qa-foot">
-      <p>Imate još neko pitanje?</p>
-      <a href="#kontakt">Javite se</a>
     </div>
   </div>
 </section>
