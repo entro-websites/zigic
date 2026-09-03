@@ -966,6 +966,79 @@
 
   .lb-close:hover { background: rgba(247, 241, 232, 0.12); border-color: rgba(247, 241, 232, 0.5); }
 
+  /* ---------- MODAL: PANSION ---------- */
+  .modal {
+    position: fixed;
+    inset: 0;
+    z-index: 110;
+    background: rgba(23, 15, 12, 0.72);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .modal[hidden] { display: none; }
+
+  .modal-card {
+    position: relative;
+    width: min(100%, 680px);
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+    background: var(--page);
+    border-radius: var(--r-big);
+    box-shadow: 0 24px 60px rgba(23, 15, 12, 0.35);
+  }
+
+  .modal-media {
+    height: 240px;
+    overflow: hidden;
+    border-radius: var(--r-big) var(--r-big) 0 0;
+  }
+
+  .modal-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .modal-body { padding: 32px 36px 36px; }
+  .modal-body h3 { font-size: 1.6rem; line-height: 1.25; margin-bottom: 12px; }
+  .modal-body p { color: var(--muted); font-size: 0.94rem; line-height: 1.7; }
+
+  .modal-list {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .modal-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.92rem;
+  }
+
+  .modal-list svg { color: var(--accent); flex: none; margin-top: 2px; }
+
+  .modal-foot { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+
+  .modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(23, 15, 12, 0.55);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+
+  .modal-close:hover { background: var(--ink); }
+
   .gal-note { text-align: center; margin-top: 40px; }
   .gal-note p { color: var(--muted); font-size: 0.9rem; margin-bottom: 18px; }
 
@@ -1316,6 +1389,8 @@
     .hero-cards { flex-direction: column; }
     .hero-head .btn-row .btn, .hero-head .btn-row .btn-ghost { width: 100%; }
     .cat-grid, .trust-grid { grid-template-columns: 1fr; }
+    .modal-media { height: 180px; }
+    .modal-body { padding: 24px; }
     .gal-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
     .plan-top { flex-direction: column-reverse; align-items: flex-start; gap: 12px; min-height: 0; }
     .plan-wide { grid-template-columns: 1fr; }
@@ -1489,7 +1564,7 @@
         </span>
         <h3>Pansion za pse</h3>
         <p>Natkriveni boksovi, prostor za kretanje i hlad leti. Pse izvodim svaki dan, ne stoje zatvoreni u boksu.</p>
-        <a href="#pansion" class="btn btn-sm">Više o pansionu</a>
+        <a href="#pansion" class="btn btn-sm" id="pansionOpen">Više o pansionu</a>
       </article>
 
       <article class="cat-card">
@@ -1969,6 +2044,33 @@
   <figcaption id="lbCap"></figcaption>
 </div>
 
+<!-- ================= MODAL: PANSION ================= -->
+<div class="modal" id="pansionModal" hidden role="dialog" aria-modal="true" aria-labelledby="pansionModalTitle">
+  <div class="modal-card" id="pansionModalCard">
+    <button class="modal-close" id="pansionModalClose" type="button" aria-label="Zatvori">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="modal-media">
+      <img src="assets/pansion_za_pse_258.jpg" alt="Natkriveni boksovi pansiona za pse sa mrežastim vratima i psom u dvorištu">
+    </div>
+    <div class="modal-body">
+      <span class="chip">Pansion za pse</span>
+      <h3 id="pansionModalTitle">Pas ostaje u istom dvorištu gde su i moji psi</h3>
+      <p>Natkriveni boksovi sa mestom za kretanje, hlad leti i suvo ležište zimi. Pas ne stoji zatvoren ceo dan &mdash; izvodim ga svaki dan i držim raspored hranjenja koji mi ostavite.</p>
+      <ul class="modal-list">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Natkriveni boksovi i ograđeno dvorište</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Hranjenje po vašem rasporedu i vašoj hrani</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Svakodnevno izvođenje i nadzor tokom celog dana</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Dnevni, nedeljni i mesečni boravak &mdash; cena po dogovoru</span></li>
+      </ul>
+      <div class="modal-foot">
+        <a href="#kontakt" class="btn" data-modal-close>Rezervišite mesto</a>
+        <a href="#pansion" class="btn-ghost" data-modal-close>Pogledajte pansion na sajtu</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
   (function () {
     var hamburgerBtn = document.getElementById('hamburgerBtn');
@@ -2122,6 +2224,49 @@
           setQaHeight(item);
         }
       });
+    });
+
+    // ---- modal: pansion ----
+    var pm = document.getElementById('pansionModal');
+    var pmCard = document.getElementById('pansionModalCard');
+    var pmClose = document.getElementById('pansionModalClose');
+    var pmOpen = document.getElementById('pansionOpen');
+    var pmOpener = null;
+
+    function openPansion() {
+      pm.hidden = false;
+      document.body.style.overflow = 'hidden';
+      pmCard.scrollTop = 0;
+      pmClose.focus();
+    }
+
+    function closePansion() {
+      pm.hidden = true;
+      document.body.style.overflow = '';
+      if (pmOpener) { pmOpener.focus(); pmOpener = null; }
+    }
+
+    pmOpen.addEventListener('click', function (e) {
+      e.preventDefault();
+      pmOpener = pmOpen;
+      openPansion();
+    });
+
+    pmClose.addEventListener('click', closePansion);
+
+    pm.addEventListener('click', function (e) {
+      if (!pmCard.contains(e.target)) closePansion();
+    });
+
+    pm.querySelectorAll('[data-modal-close]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        pmOpener = null;
+        closePansion();
+      });
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !pm.hidden) closePansion();
     });
 
     window.addEventListener('resize', function () {
